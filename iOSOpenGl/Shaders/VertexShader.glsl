@@ -1,10 +1,10 @@
-#version 300 es
-layout(location = 0) in vec3 position;
-layout(location = 1) in vec3 color;
 
-out vec3 outColor;
+attribute  vec3 position;
+attribute  vec3 color;
+attribute  vec2 texcoord;
+varying vec2 vTexcoord;
 
 void main(){
     gl_Position = vec4(position,1.0);
-    outColor = color;
+    vTexcoord = texcoord;
 }

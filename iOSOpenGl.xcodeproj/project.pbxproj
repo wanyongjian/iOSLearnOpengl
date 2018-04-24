@@ -19,6 +19,9 @@
 		21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2011208EE2F00046F4DA /* GLESUtils.c */; };
 		21EB2015208EF61D0046F4DA /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2014208EF61D0046F4DA /* VertexShader.glsl */; };
 		21EB2017208EF62F0046F4DA /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2016208EF62F0046F4DA /* FragmentShader.glsl */; };
+		21EB203A208F24E00046F4DA /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2039208F24E00046F4DA /* wood.jpg */; };
+		21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB204C208F2E920046F4DA /* libjpeg.a */; };
+		21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2054208F2E920046F4DA /* JpegUtil.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,14 @@
 		21EB2012208EE2F00046F4DA /* GLESUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
 		21EB2014208EF61D0046F4DA /* VertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = "<group>"; };
 		21EB2016208EF62F0046F4DA /* FragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = "<group>"; };
+		21EB2039208F24E00046F4DA /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood.jpg; sourceTree = "<group>"; };
+		21EB204C208F2E920046F4DA /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		21EB204F208F2E920046F4DA /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
+		21EB2050208F2E920046F4DA /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
+		21EB2051208F2E920046F4DA /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
+		21EB2052208F2E920046F4DA /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
+		21EB2053208F2E920046F4DA /* JpegUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegUtil.h; sourceTree = "<group>"; };
+		21EB2054208F2E920046F4DA /* JpegUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JpegUtil.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +131,7 @@
 				21EB1FDE208ECE9E0046F4DA /* ViewController.m */,
 				21EB200C208ED0EF0046F4DA /* OpenglView.h */,
 				21EB200D208ED0EF0046F4DA /* OpenglView.m */,
+				21EB2039208F24E00046F4DA /* wood.jpg */,
 				21EB1FE0208ECE9E0046F4DA /* Main.storyboard */,
 				21EB1FE3208ECE9E0046F4DA /* Assets.xcassets */,
 				21EB1FE5208ECE9E0046F4DA /* LaunchScreen.storyboard */,
@@ -158,10 +171,49 @@
 		21EB2010208EE2CF0046F4DA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				21EB204D208F2E920046F4DA /* include */,
+				21EB2054208F2E920046F4DA /* JpegUtil.c */,
+				21EB2053208F2E920046F4DA /* JpegUtil.h */,
+				21EB204A208F2E920046F4DA /* prebuilt */,
 				21EB2011208EE2F00046F4DA /* GLESUtils.c */,
 				21EB2012208EE2F00046F4DA /* GLESUtils.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		21EB204A208F2E920046F4DA /* prebuilt */ = {
+			isa = PBXGroup;
+			children = (
+				21EB204B208F2E920046F4DA /* ios */,
+			);
+			path = prebuilt;
+			sourceTree = "<group>";
+		};
+		21EB204B208F2E920046F4DA /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				21EB204C208F2E920046F4DA /* libjpeg.a */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		21EB204D208F2E920046F4DA /* include */ = {
+			isa = PBXGroup;
+			children = (
+				21EB204E208F2E920046F4DA /* ios */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		21EB204E208F2E920046F4DA /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				21EB204F208F2E920046F4DA /* jconfig.h */,
+				21EB2050208F2E920046F4DA /* jerror.h */,
+				21EB2051208F2E920046F4DA /* jmorecfg.h */,
+				21EB2052208F2E920046F4DA /* jpeglib.h */,
+			);
+			path = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +327,7 @@
 				21EB2015208EF61D0046F4DA /* VertexShader.glsl in Resources */,
 				21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */,
 				21EB2017208EF62F0046F4DA /* FragmentShader.glsl in Resources */,
+				21EB203A208F24E00046F4DA /* wood.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */,
+				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
 				21EB1FEA208ECE9E0046F4DA /* main.m in Sources */,
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
@@ -468,9 +522,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GN2K929UC4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOSOpenGl/Utils/prebuilt/ios",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wan.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,9 +543,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GN2K929UC4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOSOpenGl/Utils/prebuilt/ios",
+				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wan.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
