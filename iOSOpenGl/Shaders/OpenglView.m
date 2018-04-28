@@ -26,7 +26,8 @@ typedef struct {
     Vertex *_vertext;
     GLuint _vao;
     GLuint _vbo;
-    GLuint _texture;
+    GLuint _texture1;
+    GLuint _texture2;
 }
 @end
 
@@ -39,9 +40,11 @@ typedef struct {
         [self destoryRenderAndFrameBuffer];
         [self setProgram];
         [self setFrameAndRenderBuffer];
-//        [self setVertexData];
         [self setVBO];
-        [self setTexture];
+        
+        [self setTexture1];
+        [self setTexture2];
+        
         [self render];
     }
     return self;
@@ -51,12 +54,12 @@ typedef struct {
     _vertCount = 6;
     
     GLfloat vertices[] = {
-        0.5f,  0.5f, 0.0f, 1.0f, 0.0f,   // 右上
-        0.5f, -0.5f, 0.0f, 1.0f, 1.0f,   // 右下
-        -0.5f, -0.5f, 0.0f, 0.0f, 1.0f,  // 左下
-        -0.5f, -0.5f, 0.0f, 0.0f, 1.0f,  // 左下
-        -0.5f,  0.5f, 0.0f, 0.0f, 0.0f,  // 左上
-        0.5f,  0.5f, 0.0f, 1.0f, 0.0f,   // 右上
+        0.8f,  0.6f, 0.0f, 1.0f, 0.0f,   // 右上
+        0.8f, -0.6f, 0.0f, 1.0f, 1.0f,   // 右下
+        -0.8f, -0.6f, 0.0f, 0.0f, 1.0f,  // 左下
+        -0.8f, -0.6f, 0.0f, 0.0f, 1.0f,  // 左下
+        -0.8f,  0.6f, 0.0f, 0.0f, 0.0f,  // 左上
+        0.8f,  0.6f, 0.0f, 1.0f, 0.0f,   // 右上
     };
     _vbo = createVBO(GL_ARRAY_BUFFER, GL_STATIC_DRAW, sizeof(vertices), vertices);
     
@@ -67,7 +70,7 @@ typedef struct {
     glEnableVertexAttribArray(glGetAttribLocation(_program, "texcoord"));
 }
 
-- (void)setTexture{
+- (void)setTexture1{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"wood" ofType:@"jpg"];
     
     unsigned char *data;
@@ -80,7 +83,27 @@ typedef struct {
         printf("%s\n", "decode fail");
     }
     // 创建纹理
-    _texture = createTexture2D(GL_RGB, width, height, data);
+    _texture1 = createTexture2D(GL_RGB, width, height, data);
+    
+    if (data) {
+        free(data);
+        data = NULL;
+    }
+}
+- (void)setTexture2{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"flower" ofType:@"jpg"];
+    
+    unsigned char *data;
+    int size;
+    int width;
+    int height;
+    
+    // 加载纹理
+    if (read_jpeg_file(path.UTF8String, &data, &size, &width, &height) < 0) {
+        printf("%s\n", "decode fail");
+    }
+    // 创建纹理
+    _texture2 = createTexture2D(GL_RGB, width, height, data);
     
     if (data) {
         free(data);
@@ -108,7 +131,7 @@ typedef struct {
 }
 
 - (void)setContext{
-    _context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES3];
+    _context = [[EAGLContext alloc]initWithAPI:kEAGLRenderingAPIOpenGLES2];
     if (!_context) {
         NSLog(@"fail initial opengles 2.0 context ");
         exit(1);
@@ -136,48 +159,20 @@ typedef struct {
     glDeleteRenderbuffers(1, &_colorRenderBuffer);
     _colorRenderBuffer = 0;
 }
-//- (void)setVertexData{
-//    CGPoint p1 = CGPointMake(-0.8, 0);
-//    CGPoint p2 = CGPointMake(0.8, 0.2);
-//    CGPoint control = CGPointMake(0, -0.9);
-//    CGFloat deltaT = 0.01;
-//
-//    _vertCount = 1.0/deltaT;
-//    _vertext = (Vertex *)malloc(sizeof(Vertex) * _vertCount);
-//
-//    // t的范围[0,1]
-//    for (int i = 0; i < _vertCount; i++) {
-//        float t = i * deltaT;
-//
-//        // 二次方计算公式Vertex
-//        float cx = (1-t)*(1-t)*p1.x + 2*t*(1-t)*control.x + t*t*p2.x;
-//        float cy = (1-t)*(1-t)*p1.y + 2*t*(1-t)*control.y + t*t*p2.y;
-//        _vertext[i] = (Vertex){cx, cy, 0.0, 1.0, 0.0, 0.0};
-//
-//        printf("%f, %f\n",cx, cy);
-//    }
-//
-//}
-//- (void)setVao{
-//    glGenVertexArrays(1, &_vao);
-//    glBindVertexArray(_vao);
-//
-//    GLuint vbo = createVBO(GL_ARRAY_BUFFER, GL_STATIC_DRAW, sizeof(Vertex)*(_vertCount+1), _vertext);
-//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), NULL);
-//    glEnableVertexAttribArray(0);
-//
-//    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), NULL+sizeof(float)*3);
-//    glEnableVertexAttribArray(1);
-//}
+
 - (void)render{
     glClearColor(1.0, 1.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     glLineWidth(2.0);
     glViewport(0, 0, self.frame.size.width, self.frame.size.height);
 
-    glActiveTexture(_texture);
-    glBindTexture(GL_TEXTURE_2D, _texture);
-    glUniform1i(glGetAttribLocation(_program, "image"), 0);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, _texture1);
+    glUniform1i(glGetUniformLocation(_program, "imageFlower"), 0);
+    
+//    glActiveTexture(GL_TEXTURE1);
+//    glBindTexture(GL_TEXTURE_2D, _texture2);
+//    glUniform1i(glGetUniformLocation(_program, "imageFlower"), 1);
     
     glDrawArrays(GL_TRIANGLES, 0, _vertCount);
     

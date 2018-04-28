@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "OpenglView.h"
+#import <GPUImage.h>
+#import "macro.h"
 
 @interface ViewController ()
 
@@ -17,10 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    OpenglView *view = [[OpenglView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:view];
+    GPUImageView *imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
+    imageView.fillMode = kGPUImageFillModePreserveAspectRatio;
+    imageView.backgroundColor = RGB(0x253746, 1);
+//    GPUImagePicture *picture = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"wood.jpg"]];
+    GPUImageStillCamera *camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
+//    [camera addTarget:filter];
+    [camera addTarget:imageView];
+//    [filter useNextFrameForImageCapture];
+//    [picture processImage];
+    [camera startCameraCapture];
+    
+    [self.view addSubview:imageView];
 }
-
-
 @end
