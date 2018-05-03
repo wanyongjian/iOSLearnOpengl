@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
 		21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.m */; };
 		21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE0208ECE9E0046F4DA /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
+		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
 		21EB1FD7208ECE9E0046F4DA /* iOSOpenGl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOpenGl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				21EB1FE8208ECE9E0046F4DA /* Info.plist */,
 				21EB1FE9208ECE9E0046F4DA /* main.m */,
 				21B5945B20946078004EC8BB /* macro.h */,
+				217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */,
+				217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */,
 			);
 			path = iOSOpenGl;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
+				217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

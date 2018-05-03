@@ -10,28 +10,33 @@
 #import "OpenglView.h"
 #import <GPUImage.h>
 #import "macro.h"
+#import "FishEyeFilter.h"
 
 @interface ViewController ()
-
+@property (nonatomic,strong) GPUImageVideoCamera *videoCamera;
+@property (nonatomic,strong) GPUImageView *filteredVideoView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GPUImageView *imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
-    imageView.fillMode = kGPUImageFillModePreserveAspectRatio;
-    imageView.backgroundColor = RGB(0x253746, 1);
-//    GPUImagePicture *picture = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"wood.jpg"]];
-    GPUImageStillCamera *camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
-    camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
-//    [camera addTarget:filter];
-    [camera addTarget:imageView];
-//    [filter useNextFrameForImageCapture];
-//    [picture processImage];
-    [camera startCameraCapture];
+    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
+    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     
-    [self.view addSubview:imageView];
+//    GPUImageFilter *customFilter = [[GPUImageGrayscaleFilter alloc]init];
+    GPUImageFilter *customFilter = [[FishEyeFilter alloc]init];
+
+    self.filteredVideoView = [[GPUImageView alloc] initWithFrame:self.view.frame];
+    
+    [self.view addSubview:self.filteredVideoView];
+    // Add the view somewhere so it's visible
+    
+    [self.videoCamera addTarget:customFilter];
+    [customFilter addTarget:self.filteredVideoView];
+    
+    [self.videoCamera startCameraCapture];
+    
+    
 }
 @end
