@@ -11,6 +11,8 @@
 #import <GPUImage.h>
 #import "macro.h"
 #import "FishEyeFilter.h"
+#import "InvertFilter.h"
+#import "CustomBrightnessFilter.h"
 
 @interface ViewController ()
 @property (nonatomic,strong) GPUImageVideoCamera *videoCamera;
@@ -25,8 +27,10 @@
     self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     
 //    GPUImageFilter *customFilter = [[GPUImageGrayscaleFilter alloc]init];
-    GPUImageFilter *customFilter = [[FishEyeFilter alloc]init];
-
+//    GPUImageFilter *customFilter = [[FishEyeFilter alloc]init];
+//    GPUImageBrightnessFilter *customFilter = [[GPUImageBrightnessFilter alloc]init];
+    CustomBrightnessFilter *customFilter = [[CustomBrightnessFilter alloc] init];
+    
     self.filteredVideoView = [[GPUImageView alloc] initWithFrame:self.view.frame];
     
     [self.view addSubview:self.filteredVideoView];
@@ -37,6 +41,9 @@
     
     [self.videoCamera startCameraCapture];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        customFilter.brightness = 0.3;
+    });
     
 }
 @end

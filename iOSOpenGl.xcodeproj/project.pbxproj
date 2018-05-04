@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
+		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
+		21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
 		21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.m */; };
 		21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE0208ECE9E0046F4DA /* Main.storyboard */; };
@@ -47,6 +49,10 @@
 /* Begin PBXFileReference section */
 		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
 		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
+		21941CBA209C563400833A8F /* InvertFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvertFilter.h; sourceTree = "<group>"; };
+		21941CBB209C563400833A8F /* InvertFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvertFilter.m; sourceTree = "<group>"; };
+		21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBrightnessFilter.h; sourceTree = "<group>"; };
+		21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBrightnessFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
 		21EB1FD7208ECE9E0046F4DA /* iOSOpenGl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOpenGl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 				21EB1FE8208ECE9E0046F4DA /* Info.plist */,
 				21EB1FE9208ECE9E0046F4DA /* main.m */,
 				21B5945B20946078004EC8BB /* macro.h */,
+				21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */,
+				21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */,
+				21941CBA209C563400833A8F /* InvertFilter.h */,
+				21941CBB209C563400833A8F /* InvertFilter.m */,
 				217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */,
 				217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */,
 			);
@@ -459,6 +469,8 @@
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
 				217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */,
+				21941CBC209C563400833A8F /* InvertFilter.m in Sources */,
+				21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
