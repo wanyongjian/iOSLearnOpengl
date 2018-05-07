@@ -16,34 +16,38 @@
 
 @interface ViewController ()
 @property (nonatomic,strong) GPUImageVideoCamera *videoCamera;
-@property (nonatomic,strong) GPUImageView *filteredVideoView;
+@property (nonatomic,strong) GPUImageView *imageView;
+
+@property (nonatomic,strong) GPUImageLookupFilter *filter;
+@property (nonatomic,strong) GPUImagePicture *picture;
+//@property (nonatomic,strong) UIImageView *imageView;
 @end
 
 @implementation ViewController
+- (void)setupFilter
+{
+    self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:self.imageView];
+    
+    self.filter = [[GPUImageLookupFilter alloc] init];
+    [self.filter setIntensity:0.65f];
+    [self.filter addTarget:self.imageView];
+    
+    self.picture = [[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:@"source.jpg"]];
+    [self.picture addTarget:self.filter];
+    [self.picture processImage];
+    
+    GPUImagePicture *loockup = [[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:@"lookup_amatorka.png"]];
+    [loockup addTarget:self.filter];
+    [loockup processImage];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack];
-    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    
-//    GPUImageFilter *customFilter = [[GPUImageGrayscaleFilter alloc]init];
-//    GPUImageFilter *customFilter = [[FishEyeFilter alloc]init];
-//    GPUImageBrightnessFilter *customFilter = [[GPUImageBrightnessFilter alloc]init];
-    CustomBrightnessFilter *customFilter = [[CustomBrightnessFilter alloc] init];
-    
-    self.filteredVideoView = [[GPUImageView alloc] initWithFrame:self.view.frame];
-    
-    [self.view addSubview:self.filteredVideoView];
-    // Add the view somewhere so it's visible
-    
-    [self.videoCamera addTarget:customFilter];
-    [customFilter addTarget:self.filteredVideoView];
-    
-    [self.videoCamera startCameraCapture];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        customFilter.brightness = 0.3;
-    });
-    
+    [self setupFilter];
 }
+
+
+
 @end
