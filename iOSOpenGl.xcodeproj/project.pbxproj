@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
 		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
 		21879BF1209FF44700E55A35 /* source.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF0209FF44700E55A35 /* source.jpg */; };
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2178D17B20A16C4100A2473E /* awesomeface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awesomeface.jpg; sourceTree = "<group>"; };
 		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
 		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
 		21879BF0209FF44700E55A35 /* source.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = source.jpg; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		21EB1FD9208ECE9E0046F4DA /* iOSOpenGl */ = {
 			isa = PBXGroup;
 			children = (
+				2178D17B20A16C4100A2473E /* awesomeface.jpg */,
 				21879BF420A0226500E55A35 /* lookup.png */,
 				21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */,
 				21879BF0209FF44700E55A35 /* source.jpg */,
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */,
 				21879BF1209FF44700E55A35 /* source.jpg in Resources */,
 				21EB1FE7208ECE9E0046F4DA /* LaunchScreen.storyboard in Resources */,
 				21EB1FE4208ECE9E0046F4DA /* Assets.xcassets in Resources */,
