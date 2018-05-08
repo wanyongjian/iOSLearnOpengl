@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <GPUImage.h>
+#import "CustomAlphaBlendFilter.h"
 
 @interface ViewController ()
 
@@ -25,9 +26,11 @@
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
     
-    GPUImageMultiplyBlendFilter *blendFilter = [[GPUImageMultiplyBlendFilter alloc]init];
+    CustomAlphaBlendFilter *blendFilter = [[CustomAlphaBlendFilter alloc]init];
+//    blendFilter.mix = 0.5;
     
     UIView *backView = [[UIView alloc]initWithFrame:self.view.frame];
+    backView.backgroundColor = [UIColor clearColor];
     UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"awesomeface.jpg"]];
     imgView.frame = CGRectMake(100, 100, 100, 100);
     [backView addSubview:imgView];

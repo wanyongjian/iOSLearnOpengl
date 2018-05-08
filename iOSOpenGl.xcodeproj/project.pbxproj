@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
+		2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */; };
 		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
 		21879BF1209FF44700E55A35 /* source.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF0209FF44700E55A35 /* source.jpg */; };
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		2178D17B20A16C4100A2473E /* awesomeface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awesomeface.jpg; sourceTree = "<group>"; };
+		2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlphaBlendFilter.h; sourceTree = "<group>"; };
+		2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlphaBlendFilter.m; sourceTree = "<group>"; };
 		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
 		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
 		21879BF0209FF44700E55A35 /* source.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = source.jpg; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				21B5945B20946078004EC8BB /* macro.h */,
 				21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */,
 				21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */,
+				2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */,
+				2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */,
 				21941CBA209C563400833A8F /* InvertFilter.h */,
 				21941CBB209C563400833A8F /* InvertFilter.m */,
 				217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */,
@@ -481,6 +486,7 @@
 				21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */,
 				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
 				21EB1FEA208ECE9E0046F4DA /* main.m in Sources */,
+				2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */,
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
