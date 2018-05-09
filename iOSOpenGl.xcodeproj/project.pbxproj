@@ -14,9 +14,9 @@
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
 		21879BF520A0226500E55A35 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF420A0226500E55A35 /* lookup.png */; };
 		218933D420A2970000AF159F /* CustomSkinFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933D320A2970000AF159F /* CustomSkinFilter.m */; };
-		218933D620A2A35100AF159F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 218933D520A2A35100AF159F /* origin.png */; };
 		218933D920A2BF4E00AF159F /* CustomHSVFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933D820A2BF4E00AF159F /* CustomHSVFilter.m */; };
 		218933DC20A2DA2300AF159F /* CustomBeautyfaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933DB20A2DA2300AF159F /* CustomBeautyfaceFilter.m */; };
+		218933DE20A2ECED00AF159F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 218933DD20A2ECEC00AF159F /* origin.png */; };
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
 		21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
@@ -66,11 +66,11 @@
 		21879BF420A0226500E55A35 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		218933D220A2970000AF159F /* CustomSkinFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSkinFilter.h; sourceTree = "<group>"; };
 		218933D320A2970000AF159F /* CustomSkinFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSkinFilter.m; sourceTree = "<group>"; };
-		218933D520A2A35100AF159F /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
 		218933D720A2BF4E00AF159F /* CustomHSVFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomHSVFilter.h; sourceTree = "<group>"; };
 		218933D820A2BF4E00AF159F /* CustomHSVFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomHSVFilter.m; sourceTree = "<group>"; };
 		218933DA20A2DA2300AF159F /* CustomBeautyfaceFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBeautyfaceFilter.h; sourceTree = "<group>"; };
 		218933DB20A2DA2300AF159F /* CustomBeautyfaceFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBeautyfaceFilter.m; sourceTree = "<group>"; };
+		218933DD20A2ECEC00AF159F /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
 		21941CBA209C563400833A8F /* InvertFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvertFilter.h; sourceTree = "<group>"; };
 		21941CBB209C563400833A8F /* InvertFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvertFilter.m; sourceTree = "<group>"; };
 		21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBrightnessFilter.h; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		21EB1FD9208ECE9E0046F4DA /* iOSOpenGl */ = {
 			isa = PBXGroup;
 			children = (
-				218933D520A2A35100AF159F /* origin.png */,
+				218933DD20A2ECEC00AF159F /* origin.png */,
 				2178D17B20A16C4100A2473E /* awesomeface.jpg */,
 				21879BF420A0226500E55A35 /* lookup.png */,
 				21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */,
@@ -413,7 +413,7 @@
 				21EB2B3B20902DC600238143 /* flower.jpg in Resources */,
 				21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */,
 				21879BF520A0226500E55A35 /* lookup.png in Resources */,
-				218933D620A2A35100AF159F /* origin.png in Resources */,
+				218933DE20A2ECED00AF159F /* origin.png in Resources */,
 				21EB2017208EF62F0046F4DA /* FragmentShader.glsl in Resources */,
 				21EB203A208F24E00046F4DA /* wood.jpg in Resources */,
 			);

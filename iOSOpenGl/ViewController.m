@@ -8,70 +8,52 @@
 
 #import "ViewController.h"
 #import <GPUImage.h>
-#import "CustomAlphaBlendFilter.h"
-#import "CustomSkinFilter.h"
-#import "CustomHSVFilter.h"
 #import "CustomBeautyfaceFilter.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
-@property (nonatomic, strong) GPUImageUIElement *element;
 @property (nonatomic, strong) UISlider *slider;
 @property (nonatomic, strong) CustomBeautyfaceFilter *beautyFilter;
-@property (nonatomic, strong) GPUImagePicture *picture;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
-//    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//    self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
-//    [self.view addSubview:self.imageView];
-//
-////    GPUImageCannyEdgeDetectionFilter *canfilter = [[GPUImageCannyEdgeDetectionFilter alloc]init];
-//    CustomHSVFilter *filter = [[CustomHSVFilter alloc]init];
-//    [self.camera addTarget:filter];
-////    [canfilter addTarget:filter];
-//    [filter addTarget:self.imageView];
-//
-//    [self.camera startCameraCapture];
-    
-    
+    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionFront];
+    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    self.camera.horizontallyMirrorRearFacingCamera = YES;
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
-    self.picture = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"origin.png"]];
+
     //双边滤波
     GPUImageBilateralFilter *bilateralFilter = [[GPUImageBilateralFilter alloc]init];
     bilateralFilter.distanceNormalizationFactor = 4;
-    [self.picture addTarget:bilateralFilter];
+    [self.camera addTarget:bilateralFilter];
     //边缘检测
     GPUImageCannyEdgeDetectionFilter *cannyFilter = [[GPUImageCannyEdgeDetectionFilter alloc]init];
-    [self.picture addTarget:cannyFilter];
+    [self.camera addTarget:cannyFilter];
     //美颜
     self.beautyFilter = [[CustomBeautyfaceFilter alloc]init];
     [bilateralFilter addTarget:self.beautyFilter];
     [cannyFilter addTarget:self.beautyFilter];
-    [self.picture addTarget:self.beautyFilter];
+    [self.camera addTarget:self.beautyFilter];
     
     [self.beautyFilter addTarget:self.imageView];
 
-    [self.picture processImage];
+    [self.camera startCameraCapture];
 
     self.slider = [[UISlider alloc]initWithFrame:CGRectMake(20, 30, 300, 50)];
     self.slider.minimumValue = 0.0;
     self.slider.maximumValue = 1.0;
     [self.view addSubview:self.slider];
     [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
-    
 }
 
 - (void)sliderAction:(UISlider *)slider{
     self.beautyFilter.blendIntensity = slider.value;
-    [self.picture processImage];
 }
 //
 //- (void)paster{
