@@ -9,46 +9,95 @@
 #import "ViewController.h"
 #import <GPUImage.h>
 #import "CustomAlphaBlendFilter.h"
+#import "CustomSkinFilter.h"
+#import "CustomHSVFilter.h"
+#import "CustomBeautyfaceFilter.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
 @property (nonatomic, strong) GPUImageUIElement *element;
+@property (nonatomic, strong) UISlider *slider;
+@property (nonatomic, strong) CustomBeautyfaceFilter *beautyFilter;
+@property (nonatomic, strong) GPUImagePicture *picture;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
-    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
+//    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//    self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
+//    [self.view addSubview:self.imageView];
+//
+////    GPUImageCannyEdgeDetectionFilter *canfilter = [[GPUImageCannyEdgeDetectionFilter alloc]init];
+//    CustomHSVFilter *filter = [[CustomHSVFilter alloc]init];
+//    [self.camera addTarget:filter];
+////    [canfilter addTarget:filter];
+//    [filter addTarget:self.imageView];
+//
+//    [self.camera startCameraCapture];
+    
+    
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
+    self.picture = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"origin.png"]];
+    //双边滤波
+    GPUImageBilateralFilter *bilateralFilter = [[GPUImageBilateralFilter alloc]init];
+    bilateralFilter.distanceNormalizationFactor = 4;
+    [self.picture addTarget:bilateralFilter];
+    //边缘检测
+    GPUImageCannyEdgeDetectionFilter *cannyFilter = [[GPUImageCannyEdgeDetectionFilter alloc]init];
+    [self.picture addTarget:cannyFilter];
+    //美颜
+    self.beautyFilter = [[CustomBeautyfaceFilter alloc]init];
+    [bilateralFilter addTarget:self.beautyFilter];
+    [cannyFilter addTarget:self.beautyFilter];
+    [self.picture addTarget:self.beautyFilter];
     
-    CustomAlphaBlendFilter *blendFilter = [[CustomAlphaBlendFilter alloc]init];
-//    blendFilter.mix = 0.5;
-    
-    UIView *backView = [[UIView alloc]initWithFrame:self.view.frame];
-    backView.backgroundColor = [UIColor clearColor];
-    UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"awesomeface.jpg"]];
-    imgView.frame = CGRectMake(100, 100, 100, 100);
-    [backView addSubview:imgView];
-    self.element = [[GPUImageUIElement alloc]initWithView:backView];
-    [self.element addTarget:blendFilter];
-    //加这个直通滤镜是为了在这个滤镜的回调里面更新element
-    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
-    [self.camera addTarget:filter];
-    [filter addTarget:blendFilter];
-    
-    [blendFilter addTarget:self.imageView];
-    
-    __weak typeof(self) weakSelf = self;
-    [filter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
-        [weakSelf.element update];
-    }];
-    [self.camera startCameraCapture];
+    [self.beautyFilter addTarget:self.imageView];
+
+    [self.picture processImage];
+
+    self.slider = [[UISlider alloc]initWithFrame:CGRectMake(20, 30, 300, 50)];
+    self.slider.minimumValue = 0.0;
+    self.slider.maximumValue = 1.0;
+    [self.view addSubview:self.slider];
+    [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
     
 }
 
+- (void)sliderAction:(UISlider *)slider{
+    self.beautyFilter.blendIntensity = slider.value;
+    [self.picture processImage];
+}
+//
+//- (void)paster{
+//    //这个混合滤镜是混合算法是= 原图像*(1-目标的alpha)+目标图像*alpha
+//    //主要作用是将目标图像的非透明区域替换到源图像上，所已第一个输入源必须是源图像，self.camera 要先添加，之后才是self.element
+//    GPUImageSourceOverBlendFilter *blendFilter = [[GPUImageSourceOverBlendFilter alloc]init];
+//
+//    //加这个直通滤镜是为了在这个滤镜的回调里面更新element
+//    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
+//    [self.camera addTarget:filter];
+//    [filter addTarget:blendFilter];
+//
+//    UIView *backView = [[UIView alloc]initWithFrame:self.view.frame];
+//    backView.backgroundColor = [UIColor clearColor];
+//    UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"awesomeface.jpg"]];
+//    imgView.frame = CGRectMake(100, 100, 100, 100);
+//    [backView addSubview:imgView];
+//    self.element = [[GPUImageUIElement alloc]initWithView:backView];
+//    [self.element addTarget:blendFilter];
+//
+//
+//    [blendFilter addTarget:self.imageView];
+//
+//    __weak typeof(self) weakSelf = self;
+//    [filter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
+//        [weakSelf.element update];
+//    }];
+//}
 @end

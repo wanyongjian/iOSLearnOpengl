@@ -21,12 +21,14 @@ NSString *const CustomAlphaBlendFragmentShaderString = SHADER_STRING
      lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);
      lowp vec4 textureColor2 = texture2D(inputImageTexture2, textureCoordinate2);
      lowp vec4 desColor = vec4(0.0);
-     if(textureColor2.a == 0.0){
-         desColor = textureColor;
-     }else{
-         desColor = textureColor2;
-     }
-     gl_FragColor = vec4(vec3(desColor),1.0);;
+//     if(textureColor2.a == 0.0){
+//         desColor = textureColor;
+//     }
+//     if(textureColor.a == 0.0){
+//         desColor = textureColor2;
+//     }
+     
+     gl_FragColor = mix(textureColor, textureColor2, textureColor2.a);;
 //     gl_FragColor = vec4(mix(textureColor.rgb, textureColor2.rgb, textureColor2.a * mixturePercent), textureColor.a);
  }
  );
@@ -37,6 +39,7 @@ NSString *const CustomAlphaBlendFragmentShaderString = SHADER_STRING
 {
     if (!(self = [super initWithFragmentShaderFromString:CustomAlphaBlendFragmentShaderString]))
     {
+        
         return nil;
     }
     return self;
