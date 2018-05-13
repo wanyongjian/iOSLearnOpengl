@@ -20,7 +20,7 @@
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
 		21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
-		21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.m */; };
+		21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.mm */; };
 		21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE0208ECE9E0046F4DA /* Main.storyboard */; };
 		21EB1FE4208ECE9E0046F4DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE3208ECE9E0046F4DA /* Assets.xcassets */; };
 		21EB1FE7208ECE9E0046F4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE5208ECE9E0046F4DA /* LaunchScreen.storyboard */; };
@@ -36,6 +36,14 @@
 		21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2054208F2E920046F4DA /* JpegUtil.c */; };
 		21EB2B3B20902DC600238143 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2B3A20902DC500238143 /* flower.jpg */; };
 		22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA120A7CE4F0000A591 /* opencv2.framework */; };
+		22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */; };
+		22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA520A7D1020000A591 /* CoreImage.framework */; };
+		22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA720A7D1080000A591 /* CoreGraphics.framework */; };
+		22E8ADAA20A7D1100000A591 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA920A7D1100000A591 /* QuartzCore.framework */; };
+		22E8ADAC20A7D1140000A591 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADAB20A7D1140000A591 /* Accelerate.framework */; };
+		22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */; };
+		22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADAF20A7D1230000A591 /* CoreMedia.framework */; };
+		22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */; };
 		316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +89,7 @@
 		21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		21EB1FDD208ECE9E0046F4DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		21EB1FDE208ECE9E0046F4DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		21EB1FDE208ECE9E0046F4DA /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		21EB1FE1208ECE9E0046F4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21EB1FE3208ECE9E0046F4DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21EB1FE6208ECE9E0046F4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +117,14 @@
 		21EB2054208F2E920046F4DA /* JpegUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JpegUtil.c; sourceTree = "<group>"; };
 		21EB2B3A20902DC500238143 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
 		22E8ADA120A7CE4F0000A591 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		22E8ADA520A7D1020000A591 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		22E8ADA720A7D1080000A591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22E8ADA920A7D1100000A591 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		22E8ADAB20A7D1140000A591 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		22E8ADAF20A7D1230000A591 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		B972DBB5686C7510C1846A83 /* Pods-iOSOpenGl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.release.xcconfig"; sourceTree = "<group>"; };
 		C454923D628F5FB9E143D11E /* Pods-iOSOpenGl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.debug.xcconfig"; sourceTree = "<group>"; };
 		D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSOpenGl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +135,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */,
+				22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */,
+				22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */,
+				22E8ADAC20A7D1140000A591 /* Accelerate.framework in Frameworks */,
+				22E8ADAA20A7D1100000A591 /* QuartzCore.framework in Frameworks */,
+				22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */,
+				22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */,
+				22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */,
 				22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */,
 				21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */,
 				316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */,
@@ -186,7 +210,7 @@
 				21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */,
 				21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */,
 				21EB1FDD208ECE9E0046F4DA /* ViewController.h */,
-				21EB1FDE208ECE9E0046F4DA /* ViewController.m */,
+				21EB1FDE208ECE9E0046F4DA /* ViewController.mm */,
 				21EB2039208F24E00046F4DA /* wood.jpg */,
 				21EB2B3A20902DC500238143 /* flower.jpg */,
 				21EB1FE0208ECE9E0046F4DA /* Main.storyboard */,
@@ -293,6 +317,14 @@
 		3CD434049C444B0A706A0514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */,
+				22E8ADAF20A7D1230000A591 /* CoreMedia.framework */,
+				22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */,
+				22E8ADAB20A7D1140000A591 /* Accelerate.framework */,
+				22E8ADA920A7D1100000A591 /* QuartzCore.framework */,
+				22E8ADA720A7D1080000A591 /* CoreGraphics.framework */,
+				22E8ADA520A7D1020000A591 /* CoreImage.framework */,
+				22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */,
 				22E8ADA120A7CE4F0000A591 /* opencv2.framework */,
 				D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */,
 			);
@@ -506,7 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21EB1FDF208ECE9E0046F4DA /* ViewController.m in Sources */,
+				21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */,
 				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
 				218933D920A2BF4E00AF159F /* CustomHSVFilter.m in Sources */,
 				218933D420A2970000AF159F /* CustomSkinFilter.m in Sources */,

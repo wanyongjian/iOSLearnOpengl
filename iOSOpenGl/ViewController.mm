@@ -10,6 +10,12 @@
 #import <GPUImage.h>
 #import "CustomBeautyfaceFilter.h"
 
+#import <opencv2/opencv.hpp>
+
+#import <opencv2/imgcodecs/ios.h>
+
+#import <opencv2/imgproc/types_c.h>
+
 @interface ViewController ()
 
 @property (nonatomic, strong) GPUImageView *imageView;
@@ -55,31 +61,39 @@
 - (void)sliderAction:(UISlider *)slider{
     self.beautyFilter.blendIntensity = slider.value;
 }
-//
-//- (void)paster{
-//    //这个混合滤镜是混合算法是= 原图像*(1-目标的alpha)+目标图像*alpha
-//    //主要作用是将目标图像的非透明区域替换到源图像上，所已第一个输入源必须是源图像，self.camera 要先添加，之后才是self.element
-//    GPUImageSourceOverBlendFilter *blendFilter = [[GPUImageSourceOverBlendFilter alloc]init];
-//
-//    //加这个直通滤镜是为了在这个滤镜的回调里面更新element
-//    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
-//    [self.camera addTarget:filter];
-//    [filter addTarget:blendFilter];
-//
-//    UIView *backView = [[UIView alloc]initWithFrame:self.view.frame];
-//    backView.backgroundColor = [UIColor clearColor];
-//    UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"awesomeface.jpg"]];
-//    imgView.frame = CGRectMake(100, 100, 100, 100);
-//    [backView addSubview:imgView];
-//    self.element = [[GPUImageUIElement alloc]initWithView:backView];
-//    [self.element addTarget:blendFilter];
-//
-//
-//    [blendFilter addTarget:self.imageView];
-//
-//    __weak typeof(self) weakSelf = self;
-//    [filter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
-//        [weakSelf.element update];
-//    }];
-//}
+
+//取出图片中亮度大于某个阈值的光源的面积和中心点
+- (NSMutableArray *)getImageLightAreaAndCenter:(UIImage *)image withThresHold:(NSInteger)thresHold{
+    NSMutableArray *lightInfoArray = [@[] mutableCopy];
+    [lightInfoArray removeAllObjects];
+    cv::Mat cvImage;
+    UIImageToMat(image, cvImage);
+    
+    std::vector<std::vector<cv::Point>> g_vContours; //数组
+    if(!cvImage.empty()){
+        cv::Mat gray,result,blurGray;
+        // 将图像转换为灰度显示
+        result = cvImage.clone();
+        cv::cvtColor(cvImage,gray,CV_RGB2GRAY);
+        //图像二值化，
+        cv::threshold(gray, result, thresHold, 255, CV_THRESH_BINARY_INV);
+        //轮廓检测
+        cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+        cv::Mat Drawing = cv::Mat::zeros(result.size(), CV_8UC3);
+        for(int i= 0;i <g_vContours.size(); i++)
+        {
+            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
+            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
+            //            NSLog(@"面积-- ： %f",area);
+            cv::Point cpt;
+            cpt.x = rect.x + cvRound(rect.width/2.0);
+            cpt.y = rect.y + cvRound(rect.height/2.0);
+            //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
+            
+            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(cpt.x, cpt.y)]]];
+        }
+    }
+    return lightInfoArray;
+}
+
 @end
