@@ -35,6 +35,7 @@
 		21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB204C208F2E920046F4DA /* libjpeg.a */; };
 		21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2054208F2E920046F4DA /* JpegUtil.c */; };
 		21EB2B3B20902DC600238143 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2B3A20902DC500238143 /* flower.jpg */; };
+		22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA120A7CE4F0000A591 /* opencv2.framework */; };
 		316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		21EB2053208F2E920046F4DA /* JpegUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegUtil.h; sourceTree = "<group>"; };
 		21EB2054208F2E920046F4DA /* JpegUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JpegUtil.c; sourceTree = "<group>"; };
 		21EB2B3A20902DC500238143 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
+		22E8ADA120A7CE4F0000A591 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		B972DBB5686C7510C1846A83 /* Pods-iOSOpenGl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.release.xcconfig"; sourceTree = "<group>"; };
 		C454923D628F5FB9E143D11E /* Pods-iOSOpenGl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.debug.xcconfig"; sourceTree = "<group>"; };
 		D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSOpenGl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */,
 				21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */,
 				316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */,
 			);
@@ -290,6 +293,7 @@
 		3CD434049C444B0A706A0514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22E8ADA120A7CE4F0000A591 /* opencv2.framework */,
 				D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */,
 			);
 			name = Frameworks;
@@ -681,6 +685,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GN2K929UC4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -703,6 +711,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GN2K929UC4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
