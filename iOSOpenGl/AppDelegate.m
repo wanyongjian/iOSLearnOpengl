@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "OpenCVController.h"
 
 @interface AppDelegate ()
 
+//@property (nonatomic,strong) UIWindow *window;
 @end
 
 @implementation AppDelegate
@@ -17,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[OpenCVController alloc]init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

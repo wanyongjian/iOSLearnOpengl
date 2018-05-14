@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2167E8D120A913D200EC48CB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D020A913D100EC48CB /* opencv2.framework */; };
+		2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2167E8D320A96FF000EC48CB /* OpenCVController.mm */; };
+		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
 		2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */; };
 		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
@@ -65,6 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2167E8D020A913D100EC48CB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		2167E8D220A96FF000EC48CB /* OpenCVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVController.h; sourceTree = "<group>"; };
+		2167E8D320A96FF000EC48CB /* OpenCVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVController.mm; sourceTree = "<group>"; };
+		2167E8D520A971B700EC48CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2178D17B20A16C4100A2473E /* awesomeface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awesomeface.jpg; sourceTree = "<group>"; };
 		2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlphaBlendFilter.h; sourceTree = "<group>"; };
 		2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlphaBlendFilter.m; sourceTree = "<group>"; };
@@ -135,14 +142,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */,
+				2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */,
+				22E8ADAA20A7D1100000A591 /* QuartzCore.framework in Frameworks */,
 				22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */,
 				22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */,
 				22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */,
 				22E8ADAC20A7D1140000A591 /* Accelerate.framework in Frameworks */,
-				22E8ADAA20A7D1100000A591 /* QuartzCore.framework in Frameworks */,
 				22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */,
+				2167E8D120A913D200EC48CB /* opencv2.framework in Frameworks */,
 				22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */,
-				22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */,
 				22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */,
 				21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */,
 				316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */,
@@ -211,6 +220,8 @@
 				21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */,
 				21EB1FDD208ECE9E0046F4DA /* ViewController.h */,
 				21EB1FDE208ECE9E0046F4DA /* ViewController.mm */,
+				2167E8D220A96FF000EC48CB /* OpenCVController.h */,
+				2167E8D320A96FF000EC48CB /* OpenCVController.mm */,
 				21EB2039208F24E00046F4DA /* wood.jpg */,
 				21EB2B3A20902DC500238143 /* flower.jpg */,
 				21EB1FE0208ECE9E0046F4DA /* Main.storyboard */,
@@ -317,6 +328,7 @@
 		3CD434049C444B0A706A0514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2167E8D520A971B700EC48CB /* UIKit.framework */,
 				22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */,
 				22E8ADAF20A7D1230000A591 /* CoreMedia.framework */,
 				22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */,
@@ -326,6 +338,7 @@
 				22E8ADA520A7D1020000A591 /* CoreImage.framework */,
 				22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */,
 				22E8ADA120A7CE4F0000A591 /* opencv2.framework */,
+				2167E8D020A913D100EC48CB /* opencv2.framework */,
 				D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */,
 			);
 			name = Frameworks;
@@ -550,6 +563,7 @@
 				217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */,
 				21941CBC209C563400833A8F /* InvertFilter.m in Sources */,
 				21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */,
+				2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */,
 				218933DC20A2DA2300AF159F /* CustomBeautyfaceFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
