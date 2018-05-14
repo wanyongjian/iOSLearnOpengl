@@ -45,21 +45,27 @@
 }
 
 -(void)processImage:(cv::Mat &)image{
-    cv::inRange(<#InputArray src#>, <#InputArray lowerb#>, <#InputArray upperb#>, <#OutputArray dst#>)
-    cv::Mat grayImage,result;
+     cv::Mat grayImage,result;
+    //色相
+    int hmin = 0;
+    int hmax = 360;
+    float hmax_Max = 360.0;
+    //亮度
+    int lmin = 0;
+    int lmax = 255;
+    float lmax_Max = 255.0;
+    //饱和度
+    int smin = 0;
+    int smax = 255;
+    float smax_Max = 255.0;
+    cv::cvtColor(image, result, CV_RGB2HLS);
+    cv::inRange(result,cv::Scalar(hmin/hmax_Max, lmin / lmax_Max, smin / smax_Max), cv::Scalar(hmax/hmax_Max, lmax / lmax_Max, smax /smax_Max), result);
 //    cv::cvtColor(image, grayImage, CV_RGB2GRAY);
-    cv::cvtColor(image, grayImage, CV_RGB2HLS);
-    int width = grayImage.rows;
-    int height = grayImage.cols;
-    for (int h = 0; h < width ; h++)
-    {
-        for (int s = 0; s < height; s++)
-        {
-            c
-            grayImage.at<Vec3f>(h, s) = Vec3f(h, L / float(MAX_L), s / float(MAX_S));
-        }
-    }
-    //图像二值化，
+
+    
+    
+    
+//    //图像二值化，
 //    cv::threshold(grayImage, result, 250, 255, CV_THRESH_BINARY);
 //    //画矩形轮廓
 //    std::vector<std::vector<cv::Point>> g_vContours; //数组
@@ -83,6 +89,6 @@
 ////        NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
 //    }
 
-    image = grayImage;
+    image = result;
 }
 @end
