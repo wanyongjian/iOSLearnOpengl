@@ -45,12 +45,44 @@
 }
 
 -(void)processImage:(cv::Mat &)image{
+    cv::inRange(<#InputArray src#>, <#InputArray lowerb#>, <#InputArray upperb#>, <#OutputArray dst#>)
     cv::Mat grayImage,result;
-    cv::cvtColor(image, grayImage, CV_RGB2GRAY);
+//    cv::cvtColor(image, grayImage, CV_RGB2GRAY);
+    cv::cvtColor(image, grayImage, CV_RGB2HLS);
+    int width = grayImage.rows;
+    int height = grayImage.cols;
+    for (int h = 0; h < width ; h++)
+    {
+        for (int s = 0; s < height; s++)
+        {
+            c
+            grayImage.at<Vec3f>(h, s) = Vec3f(h, L / float(MAX_L), s / float(MAX_S));
+        }
+    }
     //图像二值化，
-    cv::threshold(grayImage, result, 254, 255, CV_THRESH_BINARY);
-    //中值滤波去椒盐噪声
-//    cv::medianBlur(result,result,3);
-    image = result;
+//    cv::threshold(grayImage, result, 250, 255, CV_THRESH_BINARY);
+//    //画矩形轮廓
+//    std::vector<std::vector<cv::Point>> g_vContours; //数组
+//    cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+//    cv::Mat Drawing = cv::Mat::zeros(result.size(), CV_8UC3);
+//
+//    NSLog(@"-=--=-= %lu",g_vContours.size());
+//    for(int i= 0;i <g_vContours.size(); i++)
+//    {
+//        cv::Scalar colorWhite = cvScalar(255.0, 255.0, 255.0);
+//        cv::Scalar colorYellow = cvScalar(255.0, 255.0, 0);
+//        cv::drawContours(result, g_vContours, i, colorWhite); //画轮廓
+//        double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
+//
+//        cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
+//        cv::rectangle(result, rect, colorYellow); //画出矩形
+////        NSLog(@"面积-- ： %f",area);
+//        cv::Point cpt;
+//        cpt.x = rect.x + cvRound(rect.width/2.0);
+//        cpt.y = rect.y + cvRound(rect.height/2.0);
+////        NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
+//    }
+
+    image = grayImage;
 }
 @end
