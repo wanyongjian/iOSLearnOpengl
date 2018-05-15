@@ -52,19 +52,20 @@
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer{
     
     UIImage *image = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer];
-    NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:240];
+//    NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:252];
+//    NSLog(@"%lu",array.count);
     //        UIImage *desImage = MatToUIImage(image);
-    NSLog(@"%ld",array.count);
-//    dispatch_async(dispatch_get_global_queue(0, 0),^{
-//        //进入另一个线程
-//                NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:240];
-//        //        UIImage *desImage = MatToUIImage(image);
-//                NSLog(@"%ld",array.count);
-//        dispatch_async(dispatch_get_main_queue(),^{
-//            //返回主线程
-//
-//        });
-//    });
+    
+    dispatch_async(dispatch_get_global_queue(0, 0),^{
+        //进入另一个线程
+                NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:252];
+        //        UIImage *desImage = MatToUIImage(image);
+                NSLog(@"%ld",array.count);
+        dispatch_async(dispatch_get_main_queue(),^{
+            //返回主线程
+
+        });
+    });
 
 }
 
@@ -75,31 +76,37 @@
     
     cv::Mat grayImage;
     UIImageToMat(image, grayImage);
-    
-    std::vector<std::vector<cv::Point>> g_vContours; //数组
-    if(!grayImage.empty()){
-        cv::Mat result,blurGray;
-        // 将图像转换为灰度显示
-        result = grayImage.clone();
-        //图像二值化，
-        cv::threshold(grayImage, result, thresHold, 255, CV_THRESH_BINARY_INV);
-        
-        UIImage *image2 = MatToUIImage(result);
-        //轮廓检测
-        cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-        for(int i= 0;i <g_vContours.size(); i++)
-        {
-            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
-            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
-            //            NSLog(@"面积-- ： %f",area);
-            cv::Point cpt;
-            cpt.x = rect.x + cvRound(rect.width/2.0);
-            cpt.y = rect.y + cvRound(rect.height/2.0);
-            //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
-            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(cpt.x, cpt.y)]]];
-        }
-        
-    }
+//
+//    std::vector<std::vector<cv::Point>> g_vContours; //数组
+//    if(!grayImage.empty()){
+//        cv::Mat result,blurGray;
+//        // 将图像转换为灰度显示
+//        result = grayImage.clone();
+//
+//        //图像二值化，
+//        cv::threshold(grayImage, result, thresHold, 255, CV_THRESH_BINARY_INV);
+//        //膨胀去噪声
+//        cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5,5));
+//        cv::dilate(result, result, element);
+//        cv::dilate(result, result, element);
+//        cv::dilate(result, result, element);
+//        cv::dilate(result, result, element);
+////        UIImage *image2 = MatToUIImage(result);
+//        //轮廓检测
+//        cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+//        for(int i= 0;i <g_vContours.size(); i++)
+//        {
+//            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
+//            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
+//            //            NSLog(@"面积-- ： %f",area);
+//            cv::Point cpt;
+//            cpt.x = rect.x + cvRound(rect.width/2.0);
+//            cpt.y = rect.y + cvRound(rect.height/2.0);
+//            //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
+//            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(cpt.x, cpt.y)]]];
+//        }
+//
+//    }
     return lightInfoArray;
 }
 

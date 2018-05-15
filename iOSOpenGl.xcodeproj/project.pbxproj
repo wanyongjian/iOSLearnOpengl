@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2167E8D120A913D200EC48CB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D020A913D100EC48CB /* opencv2.framework */; };
 		2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2167E8D320A96FF000EC48CB /* OpenCVController.mm */; };
 		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
@@ -22,6 +21,7 @@
 		218933DE20A2ECED00AF159F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 218933DD20A2ECEC00AF159F /* origin.png */; };
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
 		21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */; };
+		21E84E1920AA64DD00B4E2D9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E84E1820AA64DD00B4E2D9 /* opencv2.framework */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
 		21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.mm */; };
 		21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EB1FE0208ECE9E0046F4DA /* Main.storyboard */; };
@@ -38,7 +38,6 @@
 		21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB204C208F2E920046F4DA /* libjpeg.a */; };
 		21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2054208F2E920046F4DA /* JpegUtil.c */; };
 		21EB2B3B20902DC600238143 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2B3A20902DC500238143 /* flower.jpg */; };
-		22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA120A7CE4F0000A591 /* opencv2.framework */; };
 		22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */; };
 		22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA520A7D1020000A591 /* CoreImage.framework */; };
 		22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA720A7D1080000A591 /* CoreGraphics.framework */; };
@@ -68,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2167E8D020A913D100EC48CB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		2167E8D220A96FF000EC48CB /* OpenCVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVController.h; sourceTree = "<group>"; };
 		2167E8D320A96FF000EC48CB /* OpenCVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVController.mm; sourceTree = "<group>"; };
 		2167E8D520A971B700EC48CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -92,6 +90,7 @@
 		21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBrightnessFilter.h; sourceTree = "<group>"; };
 		21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBrightnessFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
+		21E84E1820AA64DD00B4E2D9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		21EB1FD7208ECE9E0046F4DA /* iOSOpenGl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOpenGl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,7 +122,6 @@
 		21EB2053208F2E920046F4DA /* JpegUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JpegUtil.h; sourceTree = "<group>"; };
 		21EB2054208F2E920046F4DA /* JpegUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JpegUtil.c; sourceTree = "<group>"; };
 		21EB2B3A20902DC500238143 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
-		22E8ADA120A7CE4F0000A591 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		22E8ADA520A7D1020000A591 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		22E8ADA720A7D1080000A591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,11 +146,10 @@
 				22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */,
 				22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */,
 				22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */,
+				21E84E1920AA64DD00B4E2D9 /* opencv2.framework in Frameworks */,
 				22E8ADAC20A7D1140000A591 /* Accelerate.framework in Frameworks */,
 				22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */,
-				2167E8D120A913D200EC48CB /* opencv2.framework in Frameworks */,
 				22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */,
-				22E8ADA220A7CE4F0000A591 /* opencv2.framework in Frameworks */,
 				21EB2055208F2E920046F4DA /* libjpeg.a in Frameworks */,
 				316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */,
 			);
@@ -328,6 +325,7 @@
 		3CD434049C444B0A706A0514 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21E84E1820AA64DD00B4E2D9 /* opencv2.framework */,
 				2167E8D520A971B700EC48CB /* UIKit.framework */,
 				22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */,
 				22E8ADAF20A7D1230000A591 /* CoreMedia.framework */,
@@ -337,8 +335,6 @@
 				22E8ADA720A7D1080000A591 /* CoreGraphics.framework */,
 				22E8ADA520A7D1020000A591 /* CoreImage.framework */,
 				22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */,
-				22E8ADA120A7CE4F0000A591 /* opencv2.framework */,
-				2167E8D020A913D100EC48CB /* opencv2.framework */,
 				D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */,
 			);
 			name = Frameworks;
