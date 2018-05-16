@@ -14,6 +14,7 @@
 #import <opencv2/imgcodecs/ios.h>
 #import <opencv2/imgproc/types_c.h>
 
+
 @interface ViewController () <GPUImageVideoCameraDelegate>
 
 @property (nonatomic, strong) GPUImageView *imageView;
