@@ -36,7 +36,9 @@
     self.camera.delegate = self;
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
+    
     self.blendView = [[UIView alloc]initWithFrame:self.view.frame];
+    self.blendView.backgroundColor = [UIColor clearColor];
     
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
@@ -59,7 +61,6 @@
     __weak typeof(self) weakSelf = self;
     [filter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
 //        weakSelf.element = [[GPUImageUIElement alloc]initWithView:weakSelf.blendView];
-        [weakSelf.element updateView:self.blendView];
         [weakSelf.element update];
     }];
     
@@ -126,6 +127,7 @@
                     NSLog(@"");
                 }
                 weakSelf.blendView = view;
+                [weakSelf.element updateView:weakSelf.blendView];
             });
         });
 
