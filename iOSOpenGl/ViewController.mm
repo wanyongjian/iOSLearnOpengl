@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <GPUImage.h>
 #import "CustomBeautyfaceFilter.h"
+#import "CustomUIElement.h"
 
 #import <opencv2/opencv.hpp>
 #import <opencv2/imgcodecs/ios.h>
@@ -20,7 +21,9 @@
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
 @property (nonatomic, strong) UISlider *slider;
-@property (nonatomic, strong) CustomBeautyfaceFilter *beautyFilter;
+@property (nonatomic, strong)  GPUImageLuminanceThresholdFilter *lumiFilter;
+@property (nonatomic, strong) UIView *blendView;
+@property (nonatomic, strong) CustomUIElement *element;
 @end
 
 @implementation ViewController
@@ -33,40 +36,102 @@
     self.camera.delegate = self;
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
-
+    self.blendView = [[UIView alloc]initWithFrame:self.view.frame];
+    
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
-
-    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
+    
+    //这个混合滤镜是混合算法是= 原图像*(1-目标的alpha)+目标图像*alpha
+    //主要作用是将目标图像的非透明区域替换到源图像上，所已第一个输入源必须是源图像，self.camera 要先添加，之后才是self.element
+    GPUImageSourceOverBlendFilter *blendFilter = [[GPUImageSourceOverBlendFilter alloc]init];
+    
+    //加这个直通滤镜是为了在这个滤镜的回调里面更新element
+    GPUImageFilter *filter = [[GPUImageFilter alloc]init];
     [self.camera addTarget:filter];
-    [filter addTarget:self.imageView];
+    [filter addTarget:blendFilter];
+    
+
+    self.element = [[CustomUIElement alloc]initWithView:self.blendView];
+    [self.element addTarget:blendFilter];    
+    
+    [blendFilter addTarget:self.imageView];
+    
+    __weak typeof(self) weakSelf = self;
+    [filter setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
+//        weakSelf.element = [[GPUImageUIElement alloc]initWithView:weakSelf.blendView];
+        [weakSelf.element updateView:self.blendView];
+        [weakSelf.element update];
+    }];
+    
+//    //灰度
+//    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
+//    [self.camera addTarget:filter];
+//    //亮度二值化
+//    self.lumiFilter = [[GPUImageLuminanceThresholdFilter alloc]init];
+//    self.lumiFilter.threshold = 253.8015/255.0;
+//    [filter addTarget:self.lumiFilter];
+//    //膨胀多次
+//    GPUImageDilationFilter *dilationFilter1 = [[GPUImageDilationFilter alloc]initWithRadius:3];
+//    [self.lumiFilter addTarget:dilationFilter1];
+//    GPUImageDilationFilter *dilationFilter2 = [[GPUImageDilationFilter alloc]initWithRadius:3];
+//    [dilationFilter1 addTarget:dilationFilter2];
+//    [dilationFilter2 addTarget:self.imageView];
 
     [self.camera startCameraCapture];
 
     self.slider = [[UISlider alloc]initWithFrame:CGRectMake(20, 30, 300, 50)];
-    self.slider.minimumValue = 0.0;
+    self.slider.minimumValue = 0.97;
     self.slider.maximumValue = 1.0;
     [self.view addSubview:self.slider];
     [self.slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer{
-    
-    UIImage *image = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer];
-//    NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:252];
-//    NSLog(@"%lu",array.count);
-    //        UIImage *desImage = MatToUIImage(image);
-    
-    dispatch_async(dispatch_get_global_queue(0, 0),^{
-        //进入另一个线程
-                NSMutableArray *array = [self getImageLightAreaAndCenter:image withThresHold:252];
-        //        UIImage *desImage = MatToUIImage(image);
-                NSLog(@"%ld",array.count);
-        dispatch_async(dispatch_get_main_queue(),^{
-            //返回主线程
+    UIImage *image = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer]; //灰度图像
+//    NSLog(@"图片宽高：%f,%f",image.size.width,image.size.height);
+    GPUImagePicture *picture = [[GPUImagePicture alloc]initWithImage:image];
+    //灰度
+//    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
+//    [picture addTarget:filter];
+    //亮度二值化
+    self.lumiFilter = [[GPUImageLuminanceThresholdFilter alloc]init];
+    self.lumiFilter.threshold = 253.8015/255.0;
+//    self.lumiFilter.threshold = 1.0;
+    [picture addTarget:self.lumiFilter];
+    //膨胀
+    GPUImageDilationFilter *dilationFilter1 = [[GPUImageDilationFilter alloc]initWithRadius:3];
+    [self.lumiFilter addTarget:dilationFilter1];
+    GPUImageDilationFilter *dilationFilter2 = [[GPUImageDilationFilter alloc]initWithRadius:3];
+    [dilationFilter1 addTarget:dilationFilter2];
 
+    __weak typeof(self) weakSelf = self;
+    [dilationFilter2 setFrameProcessingCompletionBlock:^(GPUImageOutput *filter, CMTime time) {
+        CGImageRef buffer = [filter.framebufferForOutput newCGImageFromFramebufferContents];
+        UIImage* image = [UIImage imageWithCGImage:buffer];
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSMutableArray *array = [weakSelf getImageLightAreaAndCenter:image withThresHold:220];
+            NSLog(@"-=-=-=: %lu",(unsigned long)array.count);
+            //更新UI
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
+                view.backgroundColor = [UIColor clearColor];
+                for (NSInteger i=0; i<array.count; i++) {
+                    UIImage *image = [UIImage imageNamed:@"awesomeface.jpg"];
+                    UIImageView *imgView = [[UIImageView alloc]initWithImage:image];
+                    imgView.frame = CGRectMake(0, 0, 30, 30);
+                    [view addSubview:imgView];
+                    CGPoint centerPersent = [[[array objectAtIndex:i] objectAtIndex:1] CGPointValue];
+                    imgView.center = CGPointMake(centerPersent.x*self.view.frame.size.width, centerPersent.y*self.view.frame.size.height);
+                    NSLog(@"");
+                }
+                weakSelf.blendView = view;
+            });
         });
-    });
+
+    }];
+    
+    [picture processImage];
 
 }
 
@@ -77,78 +142,36 @@
     
     cv::Mat grayImage;
     UIImageToMat(image, grayImage);
+    cv::cvtColor(grayImage, grayImage, CV_BGR2GRAY);
 //
-//    std::vector<std::vector<cv::Point>> g_vContours; //数组
-//    if(!grayImage.empty()){
-//        cv::Mat result,blurGray;
-//        // 将图像转换为灰度显示
-//        result = grayImage.clone();
-//
-//        //图像二值化，
-//        cv::threshold(grayImage, result, thresHold, 255, CV_THRESH_BINARY_INV);
-//        //膨胀去噪声
-//        cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5,5));
-//        cv::dilate(result, result, element);
-//        cv::dilate(result, result, element);
-//        cv::dilate(result, result, element);
-//        cv::dilate(result, result, element);
-////        UIImage *image2 = MatToUIImage(result);
-//        //轮廓检测
-//        cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-//        for(int i= 0;i <g_vContours.size(); i++)
-//        {
-//            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
-//            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
-//            //            NSLog(@"面积-- ： %f",area);
-//            cv::Point cpt;
-//            cpt.x = rect.x + cvRound(rect.width/2.0);
-//            cpt.y = rect.y + cvRound(rect.height/2.0);
-//            //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
-//            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(cpt.x, cpt.y)]]];
-//        }
-//
-//    }
+    std::vector<std::vector<cv::Point>> g_vContours; //数组
+    if(!grayImage.empty()){
+        cv::Mat result,blurGray;
+        //轮廓检测
+        cv::findContours(grayImage, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+        for(int i= 0;i <g_vContours.size(); i++){
+            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
+            if (area > 800) {
+                continue; //忽略面积大的区域
+            }
+            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
+//                        NSLog(@"面积-- ： %f",area);
+            cv::Point cpt;
+            float persentX;
+            float persentY;
+            cpt.x = rect.x + cvRound(rect.width/2.0);
+            cpt.y = rect.y + cvRound(rect.height/2.0);
+            float row = (float)grayImage.rows;
+            float col = (float)grayImage.cols;
+            persentX = cpt.y/row;
+            persentY = 1.0-cpt.x/col;
+            NSLog(@"中心-- ：x=%f,y=%f",persentX,persentY);
+            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(persentX, persentY)]]];
+        }
+    }
     return lightInfoArray;
 }
 
-
-////取出图片中亮度大于某个阈值的光源的面积和中心点
-//- (NSMutableArray *)getImageLightAreaAndCenter:(cv::Mat )cvImage withThresHold:(NSInteger)thresHold{
-//    NSMutableArray *lightInfoArray = [@[] mutableCopy];
-//    [lightInfoArray removeAllObjects];
-////    cv::Mat cvImage = image;
-////    UIImageToMat(image, cvImage);
-//
-//    std::vector<std::vector<cv::Point>> g_vContours; //数组
-//    if(!cvImage.empty()){
-//        cv::Mat gray,result,blurGray;
-//        // 将图像转换为灰度显示
-//        result = cvImage.clone();
-//        cv::cvtColor(cvImage,gray,CV_RGB2GRAY);
-//        UIImage *image11 = MatToUIImage(gray);
-//        //图像二值化，
-//        cv::threshold(gray, result, thresHold, 255, CV_THRESH_BINARY_INV);
-//
-//        UIImage *image2 = MatToUIImage(result);
-//        //轮廓检测
-//        cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-//        cv::Mat Drawing = cv::Mat::zeros(result.size(), CV_8UC3);
-//        for(int i= 0;i <g_vContours.size(); i++)
-//        {
-//            double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
-//            cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
-//            //            NSLog(@"面积-- ： %f",area);
-//            cv::Point cpt;
-//            cpt.x = rect.x + cvRound(rect.width/2.0);
-//            cpt.y = rect.y + cvRound(rect.height/2.0);
-//            //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
-//
-//            [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(cpt.x, cpt.y)]]];
-//        }
-//
-//    }
-//    return lightInfoArray;
-//}
 
 - (UIImage *)convertSampleBufferToUIImageSampleBuffer:(CMSampleBufferRef)sampleBuffer{
     
@@ -183,6 +206,7 @@
     
     // Create an image object from the Quartz image
     UIImage *image = [UIImage imageWithCGImage:quartzImage];
+//    UIImage *image = [UIImage imageWithCGImage:quartzImage scale:1.0 orientation:UIImageOrientationRight];
     
     // Release the Quartz image
     CGImageRelease(quartzImage);
@@ -192,7 +216,8 @@
 }
 
 - (void)sliderAction:(UISlider *)slider{
-    self.beautyFilter.blendIntensity = slider.value;
+    self.lumiFilter.threshold = slider.value;
+    NSLog(@"-----亮度：%f",slider.value);
 }
 
 @end

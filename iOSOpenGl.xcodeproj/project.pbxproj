@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21302C2920ABB99000F87015 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21302C2820ABB99000F87015 /* opencv2.framework */; };
+		213F17CA20AC18A5005D7830 /* CustomUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 213F17C920AC18A5005D7830 /* CustomUIElement.m */; };
 		2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2167E8D320A96FF000EC48CB /* OpenCVController.mm */; };
 		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
@@ -69,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		21302C2820ABB99000F87015 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		213F17C820AC18A5005D7830 /* CustomUIElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomUIElement.h; sourceTree = "<group>"; };
+		213F17C920AC18A5005D7830 /* CustomUIElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomUIElement.m; sourceTree = "<group>"; };
 		2167E8D220A96FF000EC48CB /* OpenCVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVController.h; sourceTree = "<group>"; };
 		2167E8D320A96FF000EC48CB /* OpenCVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVController.mm; sourceTree = "<group>"; };
 		2167E8D520A971B700EC48CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -220,6 +223,8 @@
 				21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */,
 				21EB1FDD208ECE9E0046F4DA /* ViewController.h */,
 				21EB1FDE208ECE9E0046F4DA /* ViewController.mm */,
+				213F17C820AC18A5005D7830 /* CustomUIElement.h */,
+				213F17C920AC18A5005D7830 /* CustomUIElement.m */,
 				2167E8D220A96FF000EC48CB /* OpenCVController.h */,
 				2167E8D320A96FF000EC48CB /* OpenCVController.mm */,
 				21EB2039208F24E00046F4DA /* wood.jpg */,
@@ -564,6 +569,7 @@
 				21941CBC209C563400833A8F /* InvertFilter.m in Sources */,
 				21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */,
 				2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */,
+				213F17CA20AC18A5005D7830 /* CustomUIElement.m in Sources */,
 				218933DC20A2DA2300AF159F /* CustomBeautyfaceFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
