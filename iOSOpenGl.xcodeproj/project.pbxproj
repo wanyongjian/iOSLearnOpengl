@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21302C2920ABB99000F87015 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21302C2820ABB99000F87015 /* opencv2.framework */; };
 		2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2167E8D320A96FF000EC48CB /* OpenCVController.mm */; };
 		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21302C2820ABB99000F87015 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		2167E8D220A96FF000EC48CB /* OpenCVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVController.h; sourceTree = "<group>"; };
 		2167E8D320A96FF000EC48CB /* OpenCVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVController.mm; sourceTree = "<group>"; };
 		2167E8D520A971B700EC48CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 				22E8ADAA20A7D1100000A591 /* QuartzCore.framework in Frameworks */,
 				22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */,
 				22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */,
+				21302C2920ABB99000F87015 /* opencv2.framework in Frameworks */,
 				22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */,
 				21E84E1920AA64DD00B4E2D9 /* opencv2.framework in Frameworks */,
 				22E8ADAC20A7D1140000A591 /* Accelerate.framework in Frameworks */,
@@ -326,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				21E84E1820AA64DD00B4E2D9 /* opencv2.framework */,
+				21302C2820ABB99000F87015 /* opencv2.framework */,
 				2167E8D520A971B700EC48CB /* UIKit.framework */,
 				22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */,
 				22E8ADAF20A7D1230000A591 /* CoreMedia.framework */,
