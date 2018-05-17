@@ -89,6 +89,8 @@
 
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer{
     UIImage *image = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer]; //灰度图像
+    
+//    image.imageOrientation
 //    NSLog(@"图片宽高：%f,%f",image.size.width,image.size.height);
     GPUImagePicture *picture = [[GPUImagePicture alloc]initWithImage:image];
     //灰度
@@ -112,7 +114,7 @@
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             NSMutableArray *array = [weakSelf getImageLightAreaAndCenter:image withThresHold:220];
-            NSLog(@"-=-=-=: %lu",(unsigned long)array.count);
+//            NSLog(@"-=-=-=: %lu",(unsigned long)array.count);
             //更新UI
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
@@ -124,7 +126,7 @@
                     [view addSubview:imgView];
                     CGPoint centerPersent = [[[array objectAtIndex:i] objectAtIndex:1] CGPointValue];
                     imgView.center = CGPointMake(centerPersent.x*self.view.frame.size.width, centerPersent.y*self.view.frame.size.height);
-                    NSLog(@"");
+                    
                 }
                 weakSelf.blendView = view;
                 [weakSelf.element updateView:weakSelf.blendView];
@@ -167,7 +169,7 @@
             float col = (float)grayImage.cols;
             persentX = cpt.y/row;
             persentY = 1.0-cpt.x/col;
-            NSLog(@"中心-- ：x=%f,y=%f",persentX,persentY);
+//            NSLog(@"中心-- ：x=%f,y=%f",persentX,persentY);
             [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(persentX, persentY)]]];
         }
     }
