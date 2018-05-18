@@ -52,8 +52,11 @@
     
         //灰度图
         cv::cvtColor(image, grayImage, CV_BGR2GRAY);
-        cv::blur(grayImage, result, cv::Size(3,3));
-        cv::Canny(result, result, 9, 3);
+//        cv::blur(grayImage, result, cv::Size(3,3));
+//        cv::Canny(result, result, 9, 3);
+    int blockSize = 25;
+    int constValue = 10;
+    cv::adaptiveThreshold(grayImage, result, 255, CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY_INV, blockSize, constValue);
         //    cv::GaussianBlur(grayImage, result, cv::Size(3,3), 2);
 //        cv::threshold(result, result, 250, 255, CV_THRESH_BINARY);
 //        cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5,5));
