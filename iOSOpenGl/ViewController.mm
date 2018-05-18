@@ -24,6 +24,7 @@
 @property (nonatomic, strong)  GPUImageLuminanceThresholdFilter *lumiFilter;
 @property (nonatomic, strong) UIView *blendView;
 @property (nonatomic, strong) CustomUIElement *element;
+@property (nonatomic, strong) UIImageView *coverImgView;
 @end
 
 @implementation ViewController
@@ -43,6 +44,9 @@
     self.imageView = [[GPUImageView alloc]initWithFrame:self.view.frame];
     [self.view addSubview:self.imageView];
     
+//    self.coverImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@""]];
+//    self.coverImgView.frame = CGRectMake(0, 0, 80, 80);
+//    [self.view addSubview:self.coverImgView];
     //这个混合滤镜是混合算法是= 原图像*(1-目标的alpha)+目标图像*alpha
     //主要作用是将目标图像的非透明区域替换到源图像上，所已第一个输入源必须是源图像，self.camera 要先添加，之后才是self.element
     GPUImageSourceOverBlendFilter *blendFilter = [[GPUImageSourceOverBlendFilter alloc]init];
@@ -88,11 +92,10 @@
 }
 
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer{
-    UIImage *image = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer]; //灰度图像
-    
+    UIImage *grayImage = [self convertSampleBufferToUIImageSampleBuffer:sampleBuffer]; //灰度图像
 //    image.imageOrientation
 //    NSLog(@"图片宽高：%f,%f",image.size.width,image.size.height);
-    GPUImagePicture *picture = [[GPUImagePicture alloc]initWithImage:image];
+    GPUImagePicture *GPUPicture = [[GPUImagePicture alloc]initWithImage:grayImage];
     //灰度
 //    GPUImageGrayscaleFilter *filter = [[GPUImageGrayscaleFilter alloc]init];
 //    [picture addTarget:filter];
@@ -100,7 +103,7 @@
     self.lumiFilter = [[GPUImageLuminanceThresholdFilter alloc]init];
     self.lumiFilter.threshold = 253.8015/255.0;
 //    self.lumiFilter.threshold = 1.0;
-    [picture addTarget:self.lumiFilter];
+    [GPUPicture addTarget:self.lumiFilter];
     //膨胀
     GPUImageDilationFilter *dilationFilter1 = [[GPUImageDilationFilter alloc]initWithRadius:3];
     [self.lumiFilter addTarget:dilationFilter1];
@@ -110,10 +113,10 @@
     __weak typeof(self) weakSelf = self;
     [dilationFilter2 setFrameProcessingCompletionBlock:^(GPUImageOutput *filter, CMTime time) {
         CGImageRef buffer = [filter.framebufferForOutput newCGImageFromFramebufferContents];
-        UIImage* image = [UIImage imageWithCGImage:buffer];
+        UIImage* filterImage = [UIImage imageWithCGImage:buffer];
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSMutableArray *array = [weakSelf getImageLightAreaAndCenter:image withThresHold:220];
+            NSMutableArray *array = [weakSelf getImageLightAreaAndCenter:filterImage withThresHold:220];
 //            NSLog(@"-=-=-=: %lu",(unsigned long)array.count);
             //更新UI
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -135,7 +138,7 @@
 
     }];
     
-    [picture processImage];
+    [GPUPicture processImage];
 
 }
 
@@ -153,13 +156,14 @@
         cv::Mat result,blurGray;
         //轮廓检测
         cv::findContours(grayImage, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+        UIImage *testimg = MatToUIImage(grayImage);
         for(int i= 0;i <g_vContours.size(); i++){
             double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
             if (area > 800) {
                 continue; //忽略面积大的区域
             }
             cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
-//                        NSLog(@"面积-- ： %f",area);
+            NSLog(@"矩形x,y-- ： %d,%d",rect.x,rect.y);
             cv::Point cpt;
             float persentX;
             float persentY;
@@ -167,9 +171,9 @@
             cpt.y = rect.y + cvRound(rect.height/2.0);
             float row = (float)grayImage.rows;
             float col = (float)grayImage.cols;
-            persentX = cpt.y/row;
-            persentY = 1.0-cpt.x/col;
-//            NSLog(@"中心-- ：x=%f,y=%f",persentX,persentY);
+            persentX = cpt.x/col;
+            persentY = cpt.y/row;
+//            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
             [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(persentX, persentY)]]];
         }
     }

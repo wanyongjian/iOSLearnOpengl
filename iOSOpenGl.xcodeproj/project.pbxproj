@@ -13,6 +13,8 @@
 		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
 		2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */; };
+		217B1ABA20AEA12300C0815E /* OpenCVRoundController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 217B1AB920AEA12300C0815E /* OpenCVRoundController.mm */; };
+		217B1ABD20AEBEA500C0815E /* GPUCannyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B1ABC20AEBEA500C0815E /* GPUCannyController.m */; };
 		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
 		21879BF1209FF44700E55A35 /* source.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF0209FF44700E55A35 /* source.jpg */; };
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
@@ -78,6 +80,10 @@
 		2178D17B20A16C4100A2473E /* awesomeface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awesomeface.jpg; sourceTree = "<group>"; };
 		2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlphaBlendFilter.h; sourceTree = "<group>"; };
 		2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlphaBlendFilter.m; sourceTree = "<group>"; };
+		217B1AB820AEA12300C0815E /* OpenCVRoundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVRoundController.h; sourceTree = "<group>"; };
+		217B1AB920AEA12300C0815E /* OpenCVRoundController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVRoundController.mm; sourceTree = "<group>"; };
+		217B1ABB20AEBEA500C0815E /* GPUCannyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUCannyController.h; sourceTree = "<group>"; };
+		217B1ABC20AEBEA500C0815E /* GPUCannyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUCannyController.m; sourceTree = "<group>"; };
 		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
 		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
 		21879BF0209FF44700E55A35 /* source.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = source.jpg; sourceTree = "<group>"; };
@@ -227,6 +233,10 @@
 				213F17C920AC18A5005D7830 /* CustomUIElement.m */,
 				2167E8D220A96FF000EC48CB /* OpenCVController.h */,
 				2167E8D320A96FF000EC48CB /* OpenCVController.mm */,
+				217B1AB820AEA12300C0815E /* OpenCVRoundController.h */,
+				217B1AB920AEA12300C0815E /* OpenCVRoundController.mm */,
+				217B1ABB20AEBEA500C0815E /* GPUCannyController.h */,
+				217B1ABC20AEBEA500C0815E /* GPUCannyController.m */,
 				21EB2039208F24E00046F4DA /* wood.jpg */,
 				21EB2B3A20902DC500238143 /* flower.jpg */,
 				21EB1FE0208ECE9E0046F4DA /* Main.storyboard */,
@@ -565,7 +575,9 @@
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
+				217B1ABA20AEA12300C0815E /* OpenCVRoundController.mm in Sources */,
 				217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */,
+				217B1ABD20AEBEA500C0815E /* GPUCannyController.m in Sources */,
 				21941CBC209C563400833A8F /* InvertFilter.m in Sources */,
 				21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */,
 				2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */,

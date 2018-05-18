@@ -73,7 +73,7 @@
     //灰度图
     cv::cvtColor(image, grayImage, CV_BGR2GRAY);
     //图像二值化，
-    cv::threshold(grayImage, result, 253, 255, CV_THRESH_BINARY);
+    cv::threshold(grayImage, result, 250, 255, CV_THRESH_BINARY);
     //膨胀
     cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(5,5));
     cv::dilate(result, result, element);
@@ -105,27 +105,27 @@
 //        }
 //    }
     
-//    //画矩形轮廓
-//    std::vector<std::vector<cv::Point>> g_vContours; //数组
-//    cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
-//    cv::Mat Drawing = cv::Mat::zeros(result.size(), CV_8UC3);
-//
-//    NSLog(@"-=--=-= %lu",g_vContours.size());
-//    for(int i= 0;i <g_vContours.size(); i++)
-//    {
-//        cv::Scalar colorWhite = cvScalar(255.0, 0, 255.0);
-//        cv::Scalar colorYellow = cvScalar(0, 0, 0);
-//        cv::drawContours(result, g_vContours, i, colorWhite); //画轮廓
-//        double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
-//
-//        cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
-//        cv::rectangle(result, rect, colorYellow); //画出矩形
-////        NSLog(@"面积-- ： %f",area);
-//        cv::Point cpt;
-//        cpt.x = rect.x + cvRound(rect.width/2.0);
-//        cpt.y = rect.y + cvRound(rect.height/2.0);
-////        NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
-//    }
+    //画矩形轮廓
+    std::vector<std::vector<cv::Point>> g_vContours; //数组
+    cv::findContours(result, g_vContours, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE);
+    cv::Mat Drawing = cv::Mat::zeros(result.size(), CV_8UC3);
+
+    NSLog(@"-=--=-= %lu",g_vContours.size());
+    for(int i= 0;i <g_vContours.size(); i++)
+    {
+        cv::Scalar colorWhite = cvScalar(255.0, 0, 255.0);
+        cv::Scalar colorYellow = cvScalar(0, 0, 0);
+        cv::drawContours(result, g_vContours, i, colorWhite); //画轮廓
+        double area = cv::contourArea(cv::Mat(g_vContours[i]));//计算轮廓面积
+
+        cv::Rect rect = cv::boundingRect(cv::Mat(g_vContours[i]));//轮廓外包矩形
+        cv::rectangle(result, rect, colorYellow); //画出矩形
+        NSLog(@"矩形x,y-- ： %d,%d",rect.x,rect.y);
+        cv::Point cpt;
+        cpt.x = rect.x + cvRound(rect.width/2.0);
+        cpt.y = rect.y + cvRound(rect.height/2.0);
+//        NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
+    }
 
     image = result;
 }
