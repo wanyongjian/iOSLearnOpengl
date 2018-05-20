@@ -172,7 +172,7 @@
             float row = (float)grayImage.rows;
             float col = (float)grayImage.cols;
             persentX = cpt.x/col;
-            persentY = cpt.y/row;
+            persentY = 1.0-cpt.y/row;
 //            NSLog(@"中心-- ：x=%d,y=%d",cpt.x,cpt.y);
             [lightInfoArray addObject:@[@(area),[NSValue valueWithCGPoint:CGPointMake(persentX, persentY)]]];
         }

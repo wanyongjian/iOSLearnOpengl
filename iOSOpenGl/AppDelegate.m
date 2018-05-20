@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "OpenCVRoundController.h"
 #import "GPUCannyController.h"
+#import "ColorController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[GPUCannyController alloc]init];
+    self.window.rootViewController = [[ColorController alloc]init];
     [self.window makeKeyAndVisible];
     return YES;
 }

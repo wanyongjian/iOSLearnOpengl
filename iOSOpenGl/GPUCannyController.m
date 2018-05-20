@@ -30,20 +30,70 @@
     self.camera.horizontallyMirrorRearFacingCamera = NO;
     
     CustomAlphaBlendFilter *blendFilter = [[CustomAlphaBlendFilter alloc]init];
-    [self.camera addTarget:blendFilter];
+//    [self.camera addTarget:blendFilter];
     GPUImageCannyEdgeDetectionFilter *filter = [[GPUImageCannyEdgeDetectionFilter alloc]init];
     [self.camera addTarget:filter];
 
     GPUImageDilationFilter *dilationFilter1 = [[GPUImageDilationFilter alloc]initWithRadius:9];
     [filter addTarget:dilationFilter1];
-    GPUImageErosionFilter *erosion = [[GPUImageErosionFilter alloc]initWithRadius:9];
+    GPUImageErosionFilter *erosion = [[GPUImageErosionFilter alloc]initWithRadius:3];
     [dilationFilter1 addTarget:erosion];
     [erosion addTarget:blendFilter];
     
-    [blendFilter addTarget:self.imageView];
+    GPUImageLuminanceThresholdFilter *thresFilter = [[GPUImageLuminanceThresholdFilter alloc]init];
+    thresFilter.threshold = 250/255.0;
+    [blendFilter addTarget:thresFilter];
+    
+    [filter addTarget:self.imageView];
     [self.camera startCameraCapture];
+    
+    [thresFilter setFrameProcessingCompletionBlock:^(GPUImageOutput *filter, CMTime time) {
+        CGImageRef buffer = [filter.framebufferForOutput newCGImageFromFramebufferContents];
+        UIImage* filterImage = [UIImage imageWithCGImage:buffer];
+        NSLog(@"image orientation:%ld",(long)filterImage.imageOrientation);
+    }];
 }
 
-
+- (UIImage *)convertSampleBufferToUIImageSampleBuffer:(CMSampleBufferRef)sampleBuffer{
+    
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
+    
+    // Get the number of bytes per row for the plane pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
+    
+    // Get the number of bytes per row for the plane pixel buffer
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer,0);
+    // Get the pixel buffer width and height
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    
+    // Create a device-dependent gray color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                 bytesPerRow, colorSpace, kCGImageAlphaNone);
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
+    // Free up the context and color space
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    //    UIImage *image = [UIImage imageWithCGImage:quartzImage scale:1.0 orientation:UIImageOrientationRight];
+    
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
+    
+    return (image);
+    
+}
 
 @end

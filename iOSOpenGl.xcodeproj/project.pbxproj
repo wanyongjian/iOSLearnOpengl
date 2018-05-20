@@ -8,23 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		21302C2920ABB99000F87015 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21302C2820ABB99000F87015 /* opencv2.framework */; };
-		213F17CA20AC18A5005D7830 /* CustomUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 213F17C920AC18A5005D7830 /* CustomUIElement.m */; };
 		2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2167E8D320A96FF000EC48CB /* OpenCVController.mm */; };
 		2167E8D620A971B700EC48CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167E8D520A971B700EC48CB /* UIKit.framework */; };
 		2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2178D17B20A16C4100A2473E /* awesomeface.jpg */; };
-		2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */; };
 		217B1ABA20AEA12300C0815E /* OpenCVRoundController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 217B1AB920AEA12300C0815E /* OpenCVRoundController.mm */; };
 		217B1ABD20AEBEA500C0815E /* GPUCannyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B1ABC20AEBEA500C0815E /* GPUCannyController.m */; };
-		217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */; };
 		21879BF1209FF44700E55A35 /* source.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF0209FF44700E55A35 /* source.jpg */; };
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
 		21879BF520A0226500E55A35 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF420A0226500E55A35 /* lookup.png */; };
-		218933D420A2970000AF159F /* CustomSkinFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933D320A2970000AF159F /* CustomSkinFilter.m */; };
-		218933D920A2BF4E00AF159F /* CustomHSVFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933D820A2BF4E00AF159F /* CustomHSVFilter.m */; };
-		218933DC20A2DA2300AF159F /* CustomBeautyfaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 218933DB20A2DA2300AF159F /* CustomBeautyfaceFilter.m */; };
 		218933DE20A2ECED00AF159F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 218933DD20A2ECEC00AF159F /* origin.png */; };
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
-		21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */; };
 		21E84E1920AA64DD00B4E2D9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E84E1820AA64DD00B4E2D9 /* opencv2.framework */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
 		21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.mm */; };
@@ -50,6 +43,15 @@
 		22E8ADAE20A7D11D0000A591 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */; };
 		22E8ADB020A7D1230000A591 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADAF20A7D1230000A591 /* CoreMedia.framework */; };
 		22E8ADB220A7D12C0000A591 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */; };
+		22E8ADB520B14CEB0000A591 /* ColorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADB420B14CEA0000A591 /* ColorController.m */; };
+		22E8ADC520B14E3D0000A591 /* CustomAlphaBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADB820B14E3C0000A591 /* CustomAlphaBlendFilter.m */; };
+		22E8ADC620B14E3D0000A591 /* CustomBeautyfaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADBA20B14E3C0000A591 /* CustomBeautyfaceFilter.m */; };
+		22E8ADC720B14E3D0000A591 /* CustomBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADBC20B14E3C0000A591 /* CustomBrightnessFilter.m */; };
+		22E8ADC820B14E3D0000A591 /* CustomHSVFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADBE20B14E3C0000A591 /* CustomHSVFilter.m */; };
+		22E8ADC920B14E3D0000A591 /* CustomSkinFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADC020B14E3C0000A591 /* CustomSkinFilter.m */; };
+		22E8ADCA20B14E3D0000A591 /* CustomUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADC220B14E3C0000A591 /* CustomUIElement.m */; };
+		22E8ADCB20B14E3D0000A591 /* FishEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADC420B14E3C0000A591 /* FishEyeFilter.m */; };
+		22E8ADCF20B14F090000A591 /* YJHalfGrayFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E8ADCE20B14F090000A591 /* YJHalfGrayFilter.m */; };
 		316C33563F490C20A8887C18 /* libPods-iOSOpenGl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */; };
 /* End PBXBuildFile section */
 
@@ -72,34 +74,20 @@
 
 /* Begin PBXFileReference section */
 		21302C2820ABB99000F87015 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		213F17C820AC18A5005D7830 /* CustomUIElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomUIElement.h; sourceTree = "<group>"; };
-		213F17C920AC18A5005D7830 /* CustomUIElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomUIElement.m; sourceTree = "<group>"; };
 		2167E8D220A96FF000EC48CB /* OpenCVController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVController.h; sourceTree = "<group>"; };
 		2167E8D320A96FF000EC48CB /* OpenCVController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVController.mm; sourceTree = "<group>"; };
 		2167E8D520A971B700EC48CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2178D17B20A16C4100A2473E /* awesomeface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = awesomeface.jpg; sourceTree = "<group>"; };
-		2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAlphaBlendFilter.h; sourceTree = "<group>"; };
-		2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlphaBlendFilter.m; sourceTree = "<group>"; };
 		217B1AB820AEA12300C0815E /* OpenCVRoundController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVRoundController.h; sourceTree = "<group>"; };
 		217B1AB920AEA12300C0815E /* OpenCVRoundController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVRoundController.mm; sourceTree = "<group>"; };
 		217B1ABB20AEBEA500C0815E /* GPUCannyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUCannyController.h; sourceTree = "<group>"; };
 		217B1ABC20AEBEA500C0815E /* GPUCannyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUCannyController.m; sourceTree = "<group>"; };
-		217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
-		217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
 		21879BF0209FF44700E55A35 /* source.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = source.jpg; sourceTree = "<group>"; };
 		21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		21879BF420A0226500E55A35 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
-		218933D220A2970000AF159F /* CustomSkinFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSkinFilter.h; sourceTree = "<group>"; };
-		218933D320A2970000AF159F /* CustomSkinFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSkinFilter.m; sourceTree = "<group>"; };
-		218933D720A2BF4E00AF159F /* CustomHSVFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomHSVFilter.h; sourceTree = "<group>"; };
-		218933D820A2BF4E00AF159F /* CustomHSVFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomHSVFilter.m; sourceTree = "<group>"; };
-		218933DA20A2DA2300AF159F /* CustomBeautyfaceFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBeautyfaceFilter.h; sourceTree = "<group>"; };
-		218933DB20A2DA2300AF159F /* CustomBeautyfaceFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBeautyfaceFilter.m; sourceTree = "<group>"; };
 		218933DD20A2ECEC00AF159F /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
 		21941CBA209C563400833A8F /* InvertFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvertFilter.h; sourceTree = "<group>"; };
 		21941CBB209C563400833A8F /* InvertFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvertFilter.m; sourceTree = "<group>"; };
-		21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBrightnessFilter.h; sourceTree = "<group>"; };
-		21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomBrightnessFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
 		21E84E1820AA64DD00B4E2D9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		21EB1FD7208ECE9E0046F4DA /* iOSOpenGl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOpenGl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +129,24 @@
 		22E8ADAD20A7D11D0000A591 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		22E8ADAF20A7D1230000A591 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		22E8ADB120A7D12C0000A591 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		22E8ADB320B14CEA0000A591 /* ColorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorController.h; sourceTree = "<group>"; };
+		22E8ADB420B14CEA0000A591 /* ColorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorController.m; sourceTree = "<group>"; };
+		22E8ADB720B14E3C0000A591 /* CustomAlphaBlendFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlphaBlendFilter.h; sourceTree = "<group>"; };
+		22E8ADB820B14E3C0000A591 /* CustomAlphaBlendFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlphaBlendFilter.m; sourceTree = "<group>"; };
+		22E8ADB920B14E3C0000A591 /* CustomBeautyfaceFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBeautyfaceFilter.h; sourceTree = "<group>"; };
+		22E8ADBA20B14E3C0000A591 /* CustomBeautyfaceFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBeautyfaceFilter.m; sourceTree = "<group>"; };
+		22E8ADBB20B14E3C0000A591 /* CustomBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBrightnessFilter.h; sourceTree = "<group>"; };
+		22E8ADBC20B14E3C0000A591 /* CustomBrightnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBrightnessFilter.m; sourceTree = "<group>"; };
+		22E8ADBD20B14E3C0000A591 /* CustomHSVFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomHSVFilter.h; sourceTree = "<group>"; };
+		22E8ADBE20B14E3C0000A591 /* CustomHSVFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomHSVFilter.m; sourceTree = "<group>"; };
+		22E8ADBF20B14E3C0000A591 /* CustomSkinFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSkinFilter.h; sourceTree = "<group>"; };
+		22E8ADC020B14E3C0000A591 /* CustomSkinFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSkinFilter.m; sourceTree = "<group>"; };
+		22E8ADC120B14E3C0000A591 /* CustomUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIElement.h; sourceTree = "<group>"; };
+		22E8ADC220B14E3C0000A591 /* CustomUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUIElement.m; sourceTree = "<group>"; };
+		22E8ADC320B14E3C0000A591 /* FishEyeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEyeFilter.h; sourceTree = "<group>"; };
+		22E8ADC420B14E3C0000A591 /* FishEyeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishEyeFilter.m; sourceTree = "<group>"; };
+		22E8ADCD20B14F090000A591 /* YJHalfGrayFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJHalfGrayFilter.h; sourceTree = "<group>"; };
+		22E8ADCE20B14F090000A591 /* YJHalfGrayFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJHalfGrayFilter.m; sourceTree = "<group>"; };
 		B972DBB5686C7510C1846A83 /* Pods-iOSOpenGl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.release.xcconfig"; sourceTree = "<group>"; };
 		C454923D628F5FB9E143D11E /* Pods-iOSOpenGl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSOpenGl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSOpenGl/Pods-iOSOpenGl.debug.xcconfig"; sourceTree = "<group>"; };
 		D209625752C766FBBB1265DF /* libPods-iOSOpenGl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSOpenGl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,14 +229,16 @@
 				21879BF420A0226500E55A35 /* lookup.png */,
 				21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */,
 				21879BF0209FF44700E55A35 /* source.jpg */,
+				22E8ADCC20B14E720000A591 /* ColorFilter */,
+				22E8ADB620B14E3C0000A591 /* customFilter */,
 				21EB200F208EE2CF0046F4DA /* Shaders */,
 				21EB2010208EE2CF0046F4DA /* Utils */,
 				21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */,
 				21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */,
+				22E8ADB320B14CEA0000A591 /* ColorController.h */,
+				22E8ADB420B14CEA0000A591 /* ColorController.m */,
 				21EB1FDD208ECE9E0046F4DA /* ViewController.h */,
 				21EB1FDE208ECE9E0046F4DA /* ViewController.mm */,
-				213F17C820AC18A5005D7830 /* CustomUIElement.h */,
-				213F17C920AC18A5005D7830 /* CustomUIElement.m */,
 				2167E8D220A96FF000EC48CB /* OpenCVController.h */,
 				2167E8D320A96FF000EC48CB /* OpenCVController.mm */,
 				217B1AB820AEA12300C0815E /* OpenCVRoundController.h */,
@@ -245,20 +253,8 @@
 				21EB1FE8208ECE9E0046F4DA /* Info.plist */,
 				21EB1FE9208ECE9E0046F4DA /* main.m */,
 				21B5945B20946078004EC8BB /* macro.h */,
-				218933D720A2BF4E00AF159F /* CustomHSVFilter.h */,
-				218933D820A2BF4E00AF159F /* CustomHSVFilter.m */,
-				21941CBD209C5A7100833A8F /* CustomBrightnessFilter.h */,
-				21941CBE209C5A7100833A8F /* CustomBrightnessFilter.m */,
-				2178D1C320A19F4200A2473E /* CustomAlphaBlendFilter.h */,
-				2178D1C420A19F4200A2473E /* CustomAlphaBlendFilter.m */,
-				218933DA20A2DA2300AF159F /* CustomBeautyfaceFilter.h */,
-				218933DB20A2DA2300AF159F /* CustomBeautyfaceFilter.m */,
-				218933D220A2970000AF159F /* CustomSkinFilter.h */,
-				218933D320A2970000AF159F /* CustomSkinFilter.m */,
 				21941CBA209C563400833A8F /* InvertFilter.h */,
 				21941CBB209C563400833A8F /* InvertFilter.m */,
-				217F6BA5209AD9FD0071A66E /* FishEyeFilter.h */,
-				217F6BA6209AD9FD0071A66E /* FishEyeFilter.m */,
 			);
 			path = iOSOpenGl;
 			sourceTree = "<group>";
@@ -338,6 +334,36 @@
 				21EB2052208F2E920046F4DA /* jpeglib.h */,
 			);
 			path = ios;
+			sourceTree = "<group>";
+		};
+		22E8ADB620B14E3C0000A591 /* customFilter */ = {
+			isa = PBXGroup;
+			children = (
+				22E8ADB720B14E3C0000A591 /* CustomAlphaBlendFilter.h */,
+				22E8ADB820B14E3C0000A591 /* CustomAlphaBlendFilter.m */,
+				22E8ADB920B14E3C0000A591 /* CustomBeautyfaceFilter.h */,
+				22E8ADBA20B14E3C0000A591 /* CustomBeautyfaceFilter.m */,
+				22E8ADBB20B14E3C0000A591 /* CustomBrightnessFilter.h */,
+				22E8ADBC20B14E3C0000A591 /* CustomBrightnessFilter.m */,
+				22E8ADBD20B14E3C0000A591 /* CustomHSVFilter.h */,
+				22E8ADBE20B14E3C0000A591 /* CustomHSVFilter.m */,
+				22E8ADBF20B14E3C0000A591 /* CustomSkinFilter.h */,
+				22E8ADC020B14E3C0000A591 /* CustomSkinFilter.m */,
+				22E8ADC120B14E3C0000A591 /* CustomUIElement.h */,
+				22E8ADC220B14E3C0000A591 /* CustomUIElement.m */,
+				22E8ADC320B14E3C0000A591 /* FishEyeFilter.h */,
+				22E8ADC420B14E3C0000A591 /* FishEyeFilter.m */,
+			);
+			path = customFilter;
+			sourceTree = "<group>";
+		};
+		22E8ADCC20B14E720000A591 /* ColorFilter */ = {
+			isa = PBXGroup;
+			children = (
+				22E8ADCD20B14F090000A591 /* YJHalfGrayFilter.h */,
+				22E8ADCE20B14F090000A591 /* YJHalfGrayFilter.m */,
+			);
+			path = ColorFilter;
 			sourceTree = "<group>";
 		};
 		3CD434049C444B0A706A0514 /* Frameworks */ = {
@@ -568,21 +594,23 @@
 			files = (
 				21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */,
 				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
-				218933D920A2BF4E00AF159F /* CustomHSVFilter.m in Sources */,
-				218933D420A2970000AF159F /* CustomSkinFilter.m in Sources */,
 				21EB1FEA208ECE9E0046F4DA /* main.m in Sources */,
-				2178D1C520A19F4200A2473E /* CustomAlphaBlendFilter.m in Sources */,
+				22E8ADC920B14E3D0000A591 /* CustomSkinFilter.m in Sources */,
+				22E8ADCA20B14E3D0000A591 /* CustomUIElement.m in Sources */,
+				22E8ADC720B14E3D0000A591 /* CustomBrightnessFilter.m in Sources */,
+				22E8ADC520B14E3D0000A591 /* CustomAlphaBlendFilter.m in Sources */,
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
+				22E8ADCF20B14F090000A591 /* YJHalfGrayFilter.m in Sources */,
 				217B1ABA20AEA12300C0815E /* OpenCVRoundController.mm in Sources */,
-				217F6BA7209AD9FD0071A66E /* FishEyeFilter.m in Sources */,
+				22E8ADCB20B14E3D0000A591 /* FishEyeFilter.m in Sources */,
 				217B1ABD20AEBEA500C0815E /* GPUCannyController.m in Sources */,
 				21941CBC209C563400833A8F /* InvertFilter.m in Sources */,
-				21941CBF209C5A7100833A8F /* CustomBrightnessFilter.m in Sources */,
+				22E8ADB520B14CEB0000A591 /* ColorController.m in Sources */,
 				2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */,
-				213F17CA20AC18A5005D7830 /* CustomUIElement.m in Sources */,
-				218933DC20A2DA2300AF159F /* CustomBeautyfaceFilter.m in Sources */,
+				22E8ADC620B14E3D0000A591 /* CustomBeautyfaceFilter.m in Sources */,
+				22E8ADC820B14E3D0000A591 /* CustomHSVFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
