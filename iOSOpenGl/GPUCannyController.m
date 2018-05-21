@@ -51,6 +51,7 @@
         CGImageRef buffer = [filter.framebufferForOutput newCGImageFromFramebufferContents];
         UIImage* filterImage = [UIImage imageWithCGImage:buffer];
         NSLog(@"image orientation:%ld",(long)filterImage.imageOrientation);
+        [filter useNextFrameForImageCapture];
     }];
 }
 

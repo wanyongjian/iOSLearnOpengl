@@ -9,6 +9,9 @@
 #import "ColorController.h"
 #import <GPUImage.h>
 #import "YJHalfGrayFilter.h"
+#import "CustomAlphaBlendFilter.h"
+#import "CustomFrameBlendThreeFilter.h"
+#import "YJOldPhoteFilter.h"
 
 @interface ColorController ()
 @property (nonatomic, strong) GPUImageView *imageView;
@@ -17,6 +20,10 @@
 @property (nonatomic, strong)  GPUImageLuminanceThresholdFilter *lumiFilter;
 @property (nonatomic, strong) UIView *blendView;
 @property (nonatomic, strong) UIImageView *coverImgView;
+
+@property (nonatomic, strong) GPUImageUIElement *elemnet;
+@property (nonatomic, strong) GPUImageUIElement *desEle;
+@property (nonatomic, strong) GPUImageFilter *filter;
 @end
 
 @implementation ColorController
@@ -34,9 +41,10 @@
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
     
-    YJHalfGrayFilter *filter = [[YJHalfGrayFilter alloc]init];
+    YJOldPhoteFilter *filter = [[YJOldPhoteFilter alloc]init];
     [self.camera addTarget:filter];
     [filter addTarget:self.imageView];
+    
     [self.camera startCameraCapture];
     
 }

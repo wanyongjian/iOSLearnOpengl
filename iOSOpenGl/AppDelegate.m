@@ -12,6 +12,7 @@
 #import "OpenCVRoundController.h"
 #import "GPUCannyController.h"
 #import "ColorController.h"
+#import "FrameBlendController.h"
 
 @interface AppDelegate ()
 
