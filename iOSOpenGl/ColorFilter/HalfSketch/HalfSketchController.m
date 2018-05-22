@@ -1,11 +1,12 @@
 //
-//  ColorController.m
+//  HalfSketchController.m
 //  iOSOpenGl
 //
-//  Created by 万 on 2018/5/20.
+//  Created by wanyongjian on 2018/5/22.
 //  Copyright © 2018年 wan. All rights reserved.
 //
 
+#import "HalfSketchController.h"
 #import "ColorController.h"
 #import <GPUImage.h>
 #import "YJHalfGrayFilter.h"
@@ -15,9 +16,8 @@
 #import "CustomSketchFilter.h"
 #import "YJSnowFilter.h"
 #import "HalfSketchFilter.h"
-#import "FWAmaroFilter.h"
 
-@interface ColorController ()
+@interface HalfSketchController ()
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
 @property (nonatomic, strong) UISlider *slider;
@@ -30,7 +30,7 @@
 @property (nonatomic, strong) GPUImageFilter *filter;
 @end
 
-@implementation ColorController
+@implementation HalfSketchController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,12 +45,26 @@
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
     
-    GPUImageMissEtikateFilter *filter = [[GPUImageMissEtikateFilter alloc]init];
-    [self.camera addTarget:filter];
-    [filter addTarget:self.imageView];
+    GPUImageSketchFilter *sketchFilter = [[GPUImageSketchFilter alloc]init];
+    
+    HalfSketchFilter *blendFilter = [[HalfSketchFilter alloc]init];
+    [self.camera addTarget:blendFilter];
+    [self.camera addTarget:sketchFilter];
+    [sketchFilter addTarget:blendFilter];
+    
+    [blendFilter addTarget:self.imageView];
     
     [self.camera startCameraCapture];
     
 }
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

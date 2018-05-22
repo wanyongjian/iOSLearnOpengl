@@ -23,7 +23,17 @@
 		21879BF3209FFDDF00E55A35 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */; };
 		21879BF520A0226500E55A35 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 21879BF420A0226500E55A35 /* lookup.png */; };
 		218933DE20A2ECED00AF159F /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 218933DD20A2ECEC00AF159F /* origin.png */; };
+		2190C7BA20B3A72400A606D4 /* CustomSketchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7B920B3A72400A606D4 /* CustomSketchFilter.m */; };
+		2190C7BE20B3ABFB00A606D4 /* SimpleSketchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7BD20B3ABFB00A606D4 /* SimpleSketchController.m */; };
+		2190C7C420B3CA4F00A606D4 /* YJSnowFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7C320B3CA4F00A606D4 /* YJSnowFilter.m */; };
+		2190C7C820B3ED6800A606D4 /* HalfSketchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7C720B3ED6800A606D4 /* HalfSketchFilter.m */; };
+		2190C7CB20B3F0E100A606D4 /* HalfSketchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */; };
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
+		21B6611720B4037700AD2D53 /* amaroMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B6611220B4037700AD2D53 /* amaroMap.png */; };
+		21B6611920B4037700AD2D53 /* blackboard1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B6611420B4037700AD2D53 /* blackboard1024.png */; };
+		21B6611A20B4037700AD2D53 /* overlayMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B6611520B4037700AD2D53 /* overlayMap.png */; };
+		21B6612E20B411C800AD2D53 /* FWAmaroFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B6612C20B411C700AD2D53 /* FWAmaroFilter.m */; };
+		21B6613120B411DD00AD2D53 /* GPUImageFourInputFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B6613020B411DD00AD2D53 /* GPUImageFourInputFilter.m */; };
 		21E84E1920AA64DD00B4E2D9 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E84E1820AA64DD00B4E2D9 /* opencv2.framework */; };
 		21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */; };
 		21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 21EB1FDE208ECE9E0046F4DA /* ViewController.mm */; };
@@ -101,9 +111,27 @@
 		21879BF2209FFDDF00E55A35 /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		21879BF420A0226500E55A35 /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		218933DD20A2ECEC00AF159F /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
+		2190C7B820B3A72400A606D4 /* CustomSketchFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSketchFilter.h; sourceTree = "<group>"; };
+		2190C7B920B3A72400A606D4 /* CustomSketchFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSketchFilter.m; sourceTree = "<group>"; };
+		2190C7BC20B3ABFB00A606D4 /* SimpleSketchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleSketchController.h; sourceTree = "<group>"; };
+		2190C7BD20B3ABFB00A606D4 /* SimpleSketchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleSketchController.m; sourceTree = "<group>"; };
+		2190C7C220B3CA4F00A606D4 /* YJSnowFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSnowFilter.h; sourceTree = "<group>"; };
+		2190C7C320B3CA4F00A606D4 /* YJSnowFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSnowFilter.m; sourceTree = "<group>"; };
+		2190C7C620B3ED6800A606D4 /* HalfSketchFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfSketchFilter.h; sourceTree = "<group>"; };
+		2190C7C720B3ED6800A606D4 /* HalfSketchFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfSketchFilter.m; sourceTree = "<group>"; };
+		2190C7C920B3F0E100A606D4 /* HalfSketchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfSketchController.h; sourceTree = "<group>"; };
+		2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfSketchController.m; sourceTree = "<group>"; };
 		21941CBA209C563400833A8F /* InvertFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvertFilter.h; sourceTree = "<group>"; };
 		21941CBB209C563400833A8F /* InvertFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvertFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
+		21B6611220B4037700AD2D53 /* amaroMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amaroMap.png; sourceTree = "<group>"; };
+		21B6611420B4037700AD2D53 /* blackboard1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackboard1024.png; sourceTree = "<group>"; };
+		21B6611520B4037700AD2D53 /* overlayMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlayMap.png; sourceTree = "<group>"; };
+		21B6611E20B407E200AD2D53 /* opengl.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opengl.pch; sourceTree = "<group>"; };
+		21B6612C20B411C700AD2D53 /* FWAmaroFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAmaroFilter.m; sourceTree = "<group>"; };
+		21B6612D20B411C800AD2D53 /* FWAmaroFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAmaroFilter.h; sourceTree = "<group>"; };
+		21B6612F20B411DD00AD2D53 /* GPUImageFourInputFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageFourInputFilter.h; sourceTree = "<group>"; };
+		21B6613020B411DD00AD2D53 /* GPUImageFourInputFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageFourInputFilter.m; sourceTree = "<group>"; };
 		21E84E1820AA64DD00B4E2D9 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		21EB1FD7208ECE9E0046F4DA /* iOSOpenGl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSOpenGl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EB1FDA208ECE9E0046F4DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -215,6 +243,11 @@
 		211124E220B254660031A4C0 /* ColorFilter */ = {
 			isa = PBXGroup;
 			children = (
+				21B6612F20B411DD00AD2D53 /* GPUImageFourInputFilter.h */,
+				21B6613020B411DD00AD2D53 /* GPUImageFourInputFilter.m */,
+				21B6611120B4033300AD2D53 /* fw_amaro */,
+				2190C7C520B3ED3B00A606D4 /* HalfSketch */,
+				2190C7BB20B3ABD200A606D4 /* SimpleSketch */,
 				211124F820B2A4860031A4C0 /* OldPhoto */,
 				211124E320B254660031A4C0 /* HalfGray */,
 				211124E620B254660031A4C0 /* PhotoFrame */,
@@ -255,6 +288,40 @@
 			path = OldPhoto;
 			sourceTree = "<group>";
 		};
+		2190C7BB20B3ABD200A606D4 /* SimpleSketch */ = {
+			isa = PBXGroup;
+			children = (
+				2190C7B820B3A72400A606D4 /* CustomSketchFilter.h */,
+				2190C7B920B3A72400A606D4 /* CustomSketchFilter.m */,
+				2190C7BC20B3ABFB00A606D4 /* SimpleSketchController.h */,
+				2190C7BD20B3ABFB00A606D4 /* SimpleSketchController.m */,
+			);
+			path = SimpleSketch;
+			sourceTree = "<group>";
+		};
+		2190C7C520B3ED3B00A606D4 /* HalfSketch */ = {
+			isa = PBXGroup;
+			children = (
+				2190C7C620B3ED6800A606D4 /* HalfSketchFilter.h */,
+				2190C7C720B3ED6800A606D4 /* HalfSketchFilter.m */,
+				2190C7C920B3F0E100A606D4 /* HalfSketchController.h */,
+				2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */,
+			);
+			path = HalfSketch;
+			sourceTree = "<group>";
+		};
+		21B6611120B4033300AD2D53 /* fw_amaro */ = {
+			isa = PBXGroup;
+			children = (
+				21B6612D20B411C800AD2D53 /* FWAmaroFilter.h */,
+				21B6612C20B411C700AD2D53 /* FWAmaroFilter.m */,
+				21B6611220B4037700AD2D53 /* amaroMap.png */,
+				21B6611420B4037700AD2D53 /* blackboard1024.png */,
+				21B6611520B4037700AD2D53 /* overlayMap.png */,
+			);
+			path = fw_amaro;
+			sourceTree = "<group>";
+		};
 		21EB1FCE208ECE9E0046F4DA = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +360,8 @@
 				21EB1FDB208ECE9E0046F4DA /* AppDelegate.m */,
 				22E8ADB320B14CEA0000A591 /* ColorController.h */,
 				22E8ADB420B14CEA0000A591 /* ColorController.m */,
+				2190C7C220B3CA4F00A606D4 /* YJSnowFilter.h */,
+				2190C7C320B3CA4F00A606D4 /* YJSnowFilter.m */,
 				21EB1FDD208ECE9E0046F4DA /* ViewController.h */,
 				21EB1FDE208ECE9E0046F4DA /* ViewController.mm */,
 				2167E8D220A96FF000EC48CB /* OpenCVController.h */,
@@ -311,6 +380,7 @@
 				21B5945B20946078004EC8BB /* macro.h */,
 				21941CBA209C563400833A8F /* InvertFilter.h */,
 				21941CBB209C563400833A8F /* InvertFilter.m */,
+				21B6611E20B407E200AD2D53 /* opengl.pch */,
 			);
 			path = iOSOpenGl;
 			sourceTree = "<group>";
@@ -539,7 +609,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B6611A20B4037700AD2D53 /* overlayMap.png in Resources */,
 				2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */,
+				21B6611920B4037700AD2D53 /* blackboard1024.png in Resources */,
 				21879BF1209FF44700E55A35 /* source.jpg in Resources */,
 				21EB1FE7208ECE9E0046F4DA /* LaunchScreen.storyboard in Resources */,
 				21EB1FE4208ECE9E0046F4DA /* Assets.xcassets in Resources */,
@@ -548,6 +620,7 @@
 				21EB2015208EF61D0046F4DA /* VertexShader.glsl in Resources */,
 				21EB2B3B20902DC600238143 /* flower.jpg in Resources */,
 				211124EB20B2613E0031A4C0 /* frame.png in Resources */,
+				21B6611720B4037700AD2D53 /* amaroMap.png in Resources */,
 				21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */,
 				21879BF520A0226500E55A35 /* lookup.png in Resources */,
 				218933DE20A2ECED00AF159F /* origin.png in Resources */,
@@ -640,16 +713,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */,
+				2190C7BA20B3A72400A606D4 /* CustomSketchFilter.m in Sources */,
 				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
+				2190C7BE20B3ABFB00A606D4 /* SimpleSketchController.m in Sources */,
 				21EB1FEA208ECE9E0046F4DA /* main.m in Sources */,
 				211124FB20B2A4B60031A4C0 /* YJOldPhoteFilter.m in Sources */,
 				22E8ADC920B14E3D0000A591 /* CustomSkinFilter.m in Sources */,
 				22E8ADCA20B14E3D0000A591 /* CustomUIElement.m in Sources */,
 				22E8ADC720B14E3D0000A591 /* CustomBrightnessFilter.m in Sources */,
+				21B6612E20B411C800AD2D53 /* FWAmaroFilter.m in Sources */,
 				22E8ADC520B14E3D0000A591 /* CustomAlphaBlendFilter.m in Sources */,
 				21EB2013208EE2F00046F4DA /* GLESUtils.c in Sources */,
 				21EB1FDC208ECE9E0046F4DA /* AppDelegate.m in Sources */,
+				21B6613120B411DD00AD2D53 /* GPUImageFourInputFilter.m in Sources */,
 				21EB200E208ED0EF0046F4DA /* OpenglView.m in Sources */,
+				2190C7C420B3CA4F00A606D4 /* YJSnowFilter.m in Sources */,
 				211124E720B254660031A4C0 /* YJHalfGrayFilter.m in Sources */,
 				217B1ABA20AEA12300C0815E /* OpenCVRoundController.mm in Sources */,
 				22E8ADCB20B14E3D0000A591 /* FishEyeFilter.m in Sources */,
@@ -659,7 +737,9 @@
 				22E8ADB520B14CEB0000A591 /* ColorController.m in Sources */,
 				2167E8D420A96FF000EC48CB /* OpenCVController.mm in Sources */,
 				211124F420B295000031A4C0 /* CustomFrameBlendThreeFilter.m in Sources */,
+				2190C7CB20B3F0E100A606D4 /* HalfSketchController.m in Sources */,
 				22E8ADC620B14E3D0000A591 /* CustomBeautyfaceFilter.m in Sources */,
+				2190C7C820B3ED6800A606D4 /* HalfSketchFilter.m in Sources */,
 				22E8ADC820B14E3D0000A591 /* CustomHSVFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -831,6 +911,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = iOSOpenGl/opengl.pch;
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -857,6 +938,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_PREFIX_HEADER = iOSOpenGl/opengl.pch;
 				INFOPLIST_FILE = iOSOpenGl/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

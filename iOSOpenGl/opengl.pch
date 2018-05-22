@@ -1,0 +1,16 @@
+//
+//  opengl.pch
+//  iOSOpenGl
+//
+//  Created by wanyongjian on 2018/5/22.
+//  Copyright © 2018年 wan. All rights reserved.
+//
+
+#ifndef opengl_pch
+#define opengl_pch
+
+//#import <GPUImage.h>
+
+//#import "GPUImageFourInputFilter.h"
+
+#endif /* opengl_pch */
