@@ -245,7 +245,7 @@
 			children = (
 				21B6612F20B411DD00AD2D53 /* GPUImageFourInputFilter.h */,
 				21B6613020B411DD00AD2D53 /* GPUImageFourInputFilter.m */,
-				21B6611120B4033300AD2D53 /* fw_amaro */,
+				21B6611120B4033300AD2D53 /* fw_amaro_鸡尾酒 */,
 				2190C7C520B3ED3B00A606D4 /* HalfSketch */,
 				2190C7BB20B3ABD200A606D4 /* SimpleSketch */,
 				211124F820B2A4860031A4C0 /* OldPhoto */,
@@ -310,7 +310,7 @@
 			path = HalfSketch;
 			sourceTree = "<group>";
 		};
-		21B6611120B4033300AD2D53 /* fw_amaro */ = {
+		21B6611120B4033300AD2D53 /* fw_amaro_鸡尾酒 */ = {
 			isa = PBXGroup;
 			children = (
 				21B6612D20B411C800AD2D53 /* FWAmaroFilter.h */,
@@ -319,7 +319,7 @@
 				21B6611420B4037700AD2D53 /* blackboard1024.png */,
 				21B6611520B4037700AD2D53 /* overlayMap.png */,
 			);
-			path = fw_amaro;
+			path = "fw_amaro_鸡尾酒";
 			sourceTree = "<group>";
 		};
 		21EB1FCE208ECE9E0046F4DA = {
