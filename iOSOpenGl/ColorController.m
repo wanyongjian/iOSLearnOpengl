@@ -16,6 +16,7 @@
 #import "YJSnowFilter.h"
 #import "HalfSketchFilter.h"
 #import "FWAmaroFilter.h"
+#import "FWNashvilleFilter.h"
 
 @interface ColorController ()
 @property (nonatomic, strong) GPUImageView *imageView;
@@ -47,7 +48,7 @@
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
     
-    GPUImageMissEtikateFilter *filter = [[GPUImageMissEtikateFilter alloc]init];
+    FWNashvilleFilter *filter = [[FWNashvilleFilter alloc]init];
     [self.camera addTarget:filter];
     [filter addTarget:self.imageView];
     

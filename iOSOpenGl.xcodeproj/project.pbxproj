@@ -50,6 +50,8 @@
 		21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 21EB2054208F2E920046F4DA /* JpegUtil.c */; };
 		21EB2B3B20902DC600238143 /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 21EB2B3A20902DC500238143 /* flower.jpg */; };
 		22E2622F20B46C8D005F2960 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E2622E20B46C8D005F2960 /* opencv2.framework */; };
+		22E2623320B46D85005F2960 /* FWNashvilleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2623220B46D84005F2960 /* FWNashvilleFilter.m */; };
+		22E2623520B46F66005F2960 /* nashvilleMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623420B46F66005F2960 /* nashvilleMap.png */; };
 		22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */; };
 		22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA520A7D1020000A591 /* CoreImage.framework */; };
 		22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA720A7D1080000A591 /* CoreGraphics.framework */; };
@@ -162,6 +164,9 @@
 		21EB2054208F2E920046F4DA /* JpegUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JpegUtil.c; sourceTree = "<group>"; };
 		21EB2B3A20902DC500238143 /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
 		22E2622E20B46C8D005F2960 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		22E2623120B46D84005F2960 /* FWNashvilleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWNashvilleFilter.h; sourceTree = "<group>"; };
+		22E2623220B46D84005F2960 /* FWNashvilleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWNashvilleFilter.m; sourceTree = "<group>"; };
+		22E2623420B46F66005F2960 /* nashvilleMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashvilleMap.png; sourceTree = "<group>"; };
 		22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		22E8ADA520A7D1020000A591 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		22E8ADA720A7D1080000A591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -240,6 +245,7 @@
 		211124E220B254660031A4C0 /* ColorFilter */ = {
 			isa = PBXGroup;
 			children = (
+				22E2623020B46D84005F2960 /* fw_nashville_奶昔 */,
 				21B6612F20B411DD00AD2D53 /* GPUImageFourInputFilter.h */,
 				21B6613020B411DD00AD2D53 /* GPUImageFourInputFilter.m */,
 				21B6611120B4033300AD2D53 /* fw_amaro_鸡尾酒 */,
@@ -459,6 +465,16 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
+		22E2623020B46D84005F2960 /* fw_nashville_奶昔 */ = {
+			isa = PBXGroup;
+			children = (
+				22E2623420B46F66005F2960 /* nashvilleMap.png */,
+				22E2623120B46D84005F2960 /* FWNashvilleFilter.h */,
+				22E2623220B46D84005F2960 /* FWNashvilleFilter.m */,
+			);
+			path = "fw_nashville_奶昔";
+			sourceTree = "<group>";
+		};
 		22E8ADB620B14E3C0000A591 /* customFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +634,7 @@
 				211124EB20B2613E0031A4C0 /* frame.png in Resources */,
 				21B6611720B4037700AD2D53 /* amaroMap.png in Resources */,
 				21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */,
+				22E2623520B46F66005F2960 /* nashvilleMap.png in Resources */,
 				21879BF520A0226500E55A35 /* lookup.png in Resources */,
 				218933DE20A2ECED00AF159F /* origin.png in Resources */,
 				21EB2017208EF62F0046F4DA /* FragmentShader.glsl in Resources */,
@@ -735,6 +752,7 @@
 				211124F420B295000031A4C0 /* CustomFrameBlendThreeFilter.m in Sources */,
 				2190C7CB20B3F0E100A606D4 /* HalfSketchController.m in Sources */,
 				22E8ADC620B14E3D0000A591 /* CustomBeautyfaceFilter.m in Sources */,
+				22E2623320B46D85005F2960 /* FWNashvilleFilter.m in Sources */,
 				2190C7C820B3ED6800A606D4 /* HalfSketchFilter.m in Sources */,
 				22E8ADC820B14E3D0000A591 /* CustomHSVFilter.m in Sources */,
 			);

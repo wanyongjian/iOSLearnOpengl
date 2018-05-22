@@ -9,7 +9,6 @@
 #ifndef opengl_pch
 #define opengl_pch
 
-//#import <GPUImage.h>
 
 //#import "GPUImageFourInputFilter.h"
 
