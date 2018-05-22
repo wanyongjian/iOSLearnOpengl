@@ -30,6 +30,8 @@
 @property (nonatomic, strong) GPUImageFilter *filter;
 @end
 
+
+
 @implementation ColorController
 
 - (void)viewDidLoad {
