@@ -17,7 +17,19 @@
 #import "HalfSketchFilter.h"
 #import "FWAmaroFilter.h"
 #import "FWNashvilleFilter.h"
-
+#import "FWRiseFilter.h"
+#import "FWHudsonFilter.h"
+#import "FWXproIIFilter.h"
+#import "FWValenciaFilter.h"
+#import "FWWaldenFilter.h"
+#import "FWLomofiFilter.h"
+#import "FWInkwellFilter.h"
+#import "FWSierraFilter.h"
+#import "FWEarlybirdFilter.h"
+#import "FWSutroFilter.h"
+#import "FWToasterFilter.h"
+#import "FWBrannanFilter.h"
+#import "FWHefeFilter.h"
 @interface ColorController ()
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
@@ -48,7 +60,7 @@
     self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
     self.camera.horizontallyMirrorRearFacingCamera = NO;
     
-    FWNashvilleFilter *filter = [[FWNashvilleFilter alloc]init];
+    FWHefeFilter *filter = [[FWHefeFilter alloc]init];
     [self.camera addTarget:filter];
     [filter addTarget:self.imageView];
     
