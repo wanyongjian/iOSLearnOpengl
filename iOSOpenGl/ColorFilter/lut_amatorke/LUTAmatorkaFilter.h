@@ -7,7 +7,10 @@
 //
 
 #import "GPUImageFilterGroup.h"
+@class GPUImagePicture;
 
-@interface LUTAmatorkaFilter : GPUImageFilterGroup
+@interface LUTAmatorkaFilter : GPUImageFilterGroup{
+    GPUImagePicture *lookupImageSource;
+}
 
 @end

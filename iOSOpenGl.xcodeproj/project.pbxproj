@@ -111,6 +111,8 @@
 		22E2622F20B46C8D005F2960 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E2622E20B46C8D005F2960 /* opencv2.framework */; };
 		22E2623320B46D85005F2960 /* FWNashvilleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E2623220B46D84005F2960 /* FWNashvilleFilter.m */; };
 		22E2623520B46F66005F2960 /* nashvilleMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623420B46F66005F2960 /* nashvilleMap.png */; };
+		22E2623720B6F8F5005F2960 /* amatorka2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623620B6F8F5005F2960 /* amatorka2.png */; };
+		22E2623B20B6FD55005F2960 /* amatorka_action_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623A20B6FD54005F2960 /* amatorka_action_2.png */; };
 		22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */; };
 		22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA520A7D1020000A591 /* CoreImage.framework */; };
 		22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA720A7D1080000A591 /* CoreGraphics.framework */; };
@@ -301,6 +303,8 @@
 		22E2623120B46D84005F2960 /* FWNashvilleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWNashvilleFilter.h; sourceTree = "<group>"; };
 		22E2623220B46D84005F2960 /* FWNashvilleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWNashvilleFilter.m; sourceTree = "<group>"; };
 		22E2623420B46F66005F2960 /* nashvilleMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashvilleMap.png; sourceTree = "<group>"; };
+		22E2623620B6F8F5005F2960 /* amatorka2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amatorka2.png; sourceTree = "<group>"; };
+		22E2623A20B6FD54005F2960 /* amatorka_action_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amatorka_action_2.png; sourceTree = "<group>"; };
 		22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		22E8ADA520A7D1020000A591 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		22E8ADA720A7D1080000A591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -627,6 +631,8 @@
 		2193F95B20B681DD00CC487C /* lut_amatorke */ = {
 			isa = PBXGroup;
 			children = (
+				22E2623A20B6FD54005F2960 /* amatorka_action_2.png */,
+				22E2623620B6F8F5005F2960 /* amatorka2.png */,
 				2193F95F20B6A62D00CC487C /* lookup_amatorka.png */,
 				2193F95C20B68A8200CC487C /* LUTAmatorkaFilter.h */,
 				2193F95D20B68A8200CC487C /* LUTAmatorkaFilter.m */,
@@ -946,6 +952,7 @@
 				21B6611A20B4037700AD2D53 /* overlayMap.png in Resources */,
 				21877EC920B539860091C2A2 /* inkwellMap.png in Resources */,
 				21877EBB20B5356B0091C2A2 /* waldenMap.png in Resources */,
+				22E2623720B6F8F5005F2960 /* amatorka2.png in Resources */,
 				2178D17C20A16C4100A2473E /* awesomeface.jpg in Resources */,
 				21877EC220B537580091C2A2 /* lomoMap.png in Resources */,
 				21877EF220B543F50091C2A2 /* sutroMetal.png in Resources */,
@@ -989,6 +996,7 @@
 				211124EB20B2613E0031A4C0 /* frame.png in Resources */,
 				21877EF020B543F50091C2A2 /* sutroCurves.png in Resources */,
 				21B6611720B4037700AD2D53 /* amaroMap.png in Resources */,
+				22E2623B20B6FD55005F2960 /* amatorka_action_2.png in Resources */,
 				21877F1820B54CC20091C2A2 /* edgeBurn.png in Resources */,
 				21EB1FE2208ECE9E0046F4DA /* Main.storyboard in Resources */,
 				22E2623520B46F66005F2960 /* nashvilleMap.png in Resources */,

@@ -30,6 +30,7 @@
 #import "FWToasterFilter.h"
 #import "FWBrannanFilter.h"
 #import "FWHefeFilter.h"
+#import "LUTAmatorkaFilter.h"
 @interface ColorController ()
 @property (nonatomic, strong) GPUImageView *imageView;
 @property (nonatomic, strong) GPUImageStillCamera *camera;
@@ -41,6 +42,7 @@
 @property (nonatomic, strong) GPUImageUIElement *elemnet;
 @property (nonatomic, strong) GPUImageUIElement *desEle;
 @property (nonatomic, strong) GPUImageFilter *filter;
+@property (nonatomic, strong) GPUImagePicture *source;
 @end
 
 
@@ -53,18 +55,25 @@
     [self.view addSubview:self.imageView];
     
     // Do any additional setup after loading the view.
-    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
-    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    self.camera.horizontallyMirrorRearFacingCamera = YES;
-    //    self.camera.delegate = self;
-    self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
-    self.camera.horizontallyMirrorRearFacingCamera = NO;
+//    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
+//    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//    self.camera.horizontallyMirrorRearFacingCamera = YES;
+//    //    self.camera.delegate = self;
+//    self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
+//    self.camera.horizontallyMirrorRearFacingCamera = NO;
     
-    FWHefeFilter *filter = [[FWHefeFilter alloc]init];
-    [self.camera addTarget:filter];
+//    FWHefeFilter *filter = [[FWHefeFilter alloc]init];
+//    [self.camera addTarget:filter];
+//    [filter addTarget:self.imageView];
+    
+    self.source = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"amatorka_action_2"]];
+    
+    LUTAmatorkaFilter *filter = [[LUTAmatorkaFilter alloc]init];
+    [self.source addTarget:filter];
     [filter addTarget:self.imageView];
     
-    [self.camera startCameraCapture];
+    [self.source processImage];
+//    [self.camera startCameraCapture];
     
 }
 
