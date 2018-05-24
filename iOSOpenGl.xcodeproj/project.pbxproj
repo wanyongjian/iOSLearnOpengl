@@ -385,14 +385,14 @@
 				21877EF420B546260091C2A2 /* fw_toaster_依偎 */,
 				21877EE620B543F50091C2A2 /* fw_sutro_丛林 */,
 				21877ED420B540FC0091C2A2 /* fw_earlybird_加菲 */,
-				21877ECA20B53ABD0091C2A2 /* fw_sierra_暖阳 */,
+				21877ECA20B53ABD0091C2A2 /* fw_sierra_柔暖 */,
 				21877EC420B539860091C2A2 /* fw_Inkwell_历史 */,
 				21877EBC20B537580091C2A2 /* fw_lomofi_随心 */,
 				21877EB420B5356B0091C2A2 /* fw_Walden_牛仔 */,
 				21877EAC20B533DD0091C2A2 /* fw_valencia_沙滩 */,
-				21877EA420B531EB0091C2A2 /* fw_XproII_释然 */,
-				21877E9A20B52F6E0091C2A2 /* fw_hudson_沉静 */,
-				21877E9020B50E740091C2A2 /* fw_rise_心动 */,
+				21877EA420B531EB0091C2A2 /* fw_XproII_雅熙 */,
+				21877E9A20B52F6E0091C2A2 /* fw_hudson_雾夜 */,
+				21877E9020B50E740091C2A2 /* fw_rise_明珀 */,
 				22E2623020B46D84005F2960 /* fw_nashville_奶昔 */,
 				21B6611120B4033300AD2D53 /* fw_amaro_鸡尾酒 */,
 				2190C7C520B3ED3B00A606D4 /* HalfSketch */,
@@ -443,7 +443,7 @@
 			path = OldPhoto;
 			sourceTree = "<group>";
 		};
-		21877E9020B50E740091C2A2 /* fw_rise_心动 */ = {
+		21877E9020B50E740091C2A2 /* fw_rise_明珀 */ = {
 			isa = PBXGroup;
 			children = (
 				21877E9720B50F190091C2A2 /* blackboard1024.png */,
@@ -452,10 +452,10 @@
 				21877E9120B50E740091C2A2 /* FWRiseFilter.h */,
 				21877E9220B50E740091C2A2 /* FWRiseFilter.m */,
 			);
-			path = "fw_rise_心动";
+			path = "fw_rise_明珀";
 			sourceTree = "<group>";
 		};
-		21877E9A20B52F6E0091C2A2 /* fw_hudson_沉静 */ = {
+		21877E9A20B52F6E0091C2A2 /* fw_hudson_雾夜 */ = {
 			isa = PBXGroup;
 			children = (
 				21877E9B20B52F6E0091C2A2 /* FWHudsonFilter.h */,
@@ -464,10 +464,10 @@
 				21877E9E20B52F6E0091C2A2 /* hudsonMap.png */,
 				21877E9F20B52F6E0091C2A2 /* overlayMap.png */,
 			);
-			path = "fw_hudson_沉静";
+			path = "fw_hudson_雾夜";
 			sourceTree = "<group>";
 		};
-		21877EA420B531EB0091C2A2 /* fw_XproII_释然 */ = {
+		21877EA420B531EB0091C2A2 /* fw_XproII_雅熙 */ = {
 			isa = PBXGroup;
 			children = (
 				21877EA520B531EB0091C2A2 /* FWXproIIFilter.h */,
@@ -475,7 +475,7 @@
 				21877EA720B531EB0091C2A2 /* vignetteMap.png */,
 				21877EA820B531EB0091C2A2 /* xproMap.png */,
 			);
-			path = "fw_XproII_释然";
+			path = "fw_XproII_雅熙";
 			sourceTree = "<group>";
 		};
 		21877EAC20B533DD0091C2A2 /* fw_valencia_沙滩 */ = {
@@ -521,7 +521,7 @@
 			path = "fw_Inkwell_历史";
 			sourceTree = "<group>";
 		};
-		21877ECA20B53ABD0091C2A2 /* fw_sierra_暖阳 */ = {
+		21877ECA20B53ABD0091C2A2 /* fw_sierra_柔暖 */ = {
 			isa = PBXGroup;
 			children = (
 				21877ECB20B53ABD0091C2A2 /* FWSierraFilter.h */,
@@ -530,7 +530,7 @@
 				21877ECE20B53ABD0091C2A2 /* sierraMap.png */,
 				21877ECF20B53ABD0091C2A2 /* sierraVignette.png */,
 			);
-			path = "fw_sierra_暖阳";
+			path = "fw_sierra_柔暖";
 			sourceTree = "<group>";
 		};
 		21877ED420B540FC0091C2A2 /* fw_earlybird_加菲 */ = {
