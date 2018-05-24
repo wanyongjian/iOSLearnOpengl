@@ -84,6 +84,8 @@
 		2190C7C420B3CA4F00A606D4 /* YJSnowFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7C320B3CA4F00A606D4 /* YJSnowFilter.m */; };
 		2190C7C820B3ED6800A606D4 /* HalfSketchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7C720B3ED6800A606D4 /* HalfSketchFilter.m */; };
 		2190C7CB20B3F0E100A606D4 /* HalfSketchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */; };
+		2193F95E20B68A8200CC487C /* LUTAmatorkaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2193F95D20B68A8200CC487C /* LUTAmatorkaFilter.m */; };
+		2193F96020B6A62D00CC487C /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 2193F95F20B6A62D00CC487C /* lookup_amatorka.png */; };
 		21941CBC209C563400833A8F /* InvertFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21941CBB209C563400833A8F /* InvertFilter.m */; };
 		21B6611720B4037700AD2D53 /* amaroMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B6611220B4037700AD2D53 /* amaroMap.png */; };
 		21B6611920B4037700AD2D53 /* blackboard1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B6611420B4037700AD2D53 /* blackboard1024.png */; };
@@ -250,6 +252,9 @@
 		2190C7C720B3ED6800A606D4 /* HalfSketchFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfSketchFilter.m; sourceTree = "<group>"; };
 		2190C7C920B3F0E100A606D4 /* HalfSketchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfSketchController.h; sourceTree = "<group>"; };
 		2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfSketchController.m; sourceTree = "<group>"; };
+		2193F95C20B68A8200CC487C /* LUTAmatorkaFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LUTAmatorkaFilter.h; sourceTree = "<group>"; };
+		2193F95D20B68A8200CC487C /* LUTAmatorkaFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LUTAmatorkaFilter.m; sourceTree = "<group>"; };
+		2193F95F20B6A62D00CC487C /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
 		21941CBA209C563400833A8F /* InvertFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvertFilter.h; sourceTree = "<group>"; };
 		21941CBB209C563400833A8F /* InvertFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvertFilter.m; sourceTree = "<group>"; };
 		21B5945B20946078004EC8BB /* macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macro.h; sourceTree = "<group>"; };
@@ -374,6 +379,7 @@
 		211124E220B254660031A4C0 /* ColorFilter */ = {
 			isa = PBXGroup;
 			children = (
+				2193F95B20B681DD00CC487C /* lut_amatorke */,
 				21877F1020B54CC20091C2A2 /* fw_hefe_涂鸦 */,
 				21877F0220B54B4A0091C2A2 /* fw_brannan_海风 */,
 				21877EF420B546260091C2A2 /* fw_toaster_依偎 */,
@@ -616,6 +622,16 @@
 				2190C7CA20B3F0E100A606D4 /* HalfSketchController.m */,
 			);
 			path = HalfSketch;
+			sourceTree = "<group>";
+		};
+		2193F95B20B681DD00CC487C /* lut_amatorke */ = {
+			isa = PBXGroup;
+			children = (
+				2193F95F20B6A62D00CC487C /* lookup_amatorka.png */,
+				2193F95C20B68A8200CC487C /* LUTAmatorkaFilter.h */,
+				2193F95D20B68A8200CC487C /* LUTAmatorkaFilter.m */,
+			);
+			path = lut_amatorke;
 			sourceTree = "<group>";
 		};
 		21B6611120B4033300AD2D53 /* fw_amaro_鸡尾酒 */ = {
@@ -966,6 +982,7 @@
 				21877F0D20B54B4B0091C2A2 /* brannanProcess.png in Resources */,
 				21877F1A20B54CC20091C2A2 /* hefeGradientMap.png in Resources */,
 				21877ED320B53ABD0091C2A2 /* sierraVignette.png in Resources */,
+				2193F96020B6A62D00CC487C /* lookup_amatorka.png in Resources */,
 				21877EFD20B546270091C2A2 /* toasterColorShift.png in Resources */,
 				21877EA120B52F6E0091C2A2 /* hudsonBackground.png in Resources */,
 				21EB2B3B20902DC600238143 /* flower.jpg in Resources */,
@@ -1075,6 +1092,7 @@
 				21EB1FDF208ECE9E0046F4DA /* ViewController.mm in Sources */,
 				2190C7BA20B3A72400A606D4 /* CustomSketchFilter.m in Sources */,
 				21EB2056208F2E920046F4DA /* JpegUtil.c in Sources */,
+				2193F95E20B68A8200CC487C /* LUTAmatorkaFilter.m in Sources */,
 				21877EE520B541590091C2A2 /* FWSixInputFilter.m in Sources */,
 				21877EB920B5356B0091C2A2 /* FWWaldenFilter.m in Sources */,
 				2190C7BE20B3ABFB00A606D4 /* SimpleSketchController.m in Sources */,
