@@ -55,25 +55,25 @@
     [self.view addSubview:self.imageView];
     
     // Do any additional setup after loading the view.
-//    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
-//    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//    self.camera.horizontallyMirrorRearFacingCamera = YES;
-//    //    self.camera.delegate = self;
-//    self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
-//    self.camera.horizontallyMirrorRearFacingCamera = NO;
+    self.camera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionBack];
+    self.camera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    self.camera.horizontallyMirrorRearFacingCamera = YES;
+    //    self.camera.delegate = self;
+    self.camera.horizontallyMirrorFrontFacingCamera = YES;//设置是否为镜像
+    self.camera.horizontallyMirrorRearFacingCamera = NO;
     
 //    FWHefeFilter *filter = [[FWHefeFilter alloc]init];
 //    [self.camera addTarget:filter];
 //    [filter addTarget:self.imageView];
     
-    self.source = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"amatorka_action_2"]];
-    
+//    self.source = [[GPUImagePicture alloc]initWithImage:[UIImage imageNamed:@"amatorka_action_2"]];
+//
     LUTAmatorkaFilter *filter = [[LUTAmatorkaFilter alloc]init];
-    [self.source addTarget:filter];
+    [self.camera addTarget:filter];
     [filter addTarget:self.imageView];
-    
-    [self.source processImage];
-//    [self.camera startCameraCapture];
+//
+//    [self.source processImage];
+    [self.camera startCameraCapture];
     
 }
 

@@ -113,6 +113,7 @@
 		22E2623520B46F66005F2960 /* nashvilleMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623420B46F66005F2960 /* nashvilleMap.png */; };
 		22E2623720B6F8F5005F2960 /* amatorka2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623620B6F8F5005F2960 /* amatorka2.png */; };
 		22E2623B20B6FD55005F2960 /* amatorka_action_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623A20B6FD54005F2960 /* amatorka_action_2.png */; };
+		22E2623F20B70F2F005F2960 /* manson1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E2623E20B70F2F005F2960 /* manson1.png */; };
 		22E8ADA420A7D0FD0000A591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */; };
 		22E8ADA620A7D1020000A591 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA520A7D1020000A591 /* CoreImage.framework */; };
 		22E8ADA820A7D1080000A591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E8ADA720A7D1080000A591 /* CoreGraphics.framework */; };
@@ -305,6 +306,7 @@
 		22E2623420B46F66005F2960 /* nashvilleMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nashvilleMap.png; sourceTree = "<group>"; };
 		22E2623620B6F8F5005F2960 /* amatorka2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amatorka2.png; sourceTree = "<group>"; };
 		22E2623A20B6FD54005F2960 /* amatorka_action_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amatorka_action_2.png; sourceTree = "<group>"; };
+		22E2623E20B70F2F005F2960 /* manson1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = manson1.png; path = "../../../../../../滤镜图片资源集合/manson1.png"; sourceTree = "<group>"; };
 		22E8ADA320A7D0FD0000A591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		22E8ADA520A7D1020000A591 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		22E8ADA720A7D1080000A591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -631,6 +633,7 @@
 		2193F95B20B681DD00CC487C /* lut_amatorke */ = {
 			isa = PBXGroup;
 			children = (
+				22E2623E20B70F2F005F2960 /* manson1.png */,
 				22E2623A20B6FD54005F2960 /* amatorka_action_2.png */,
 				22E2623620B6F8F5005F2960 /* amatorka2.png */,
 				2193F95F20B6A62D00CC487C /* lookup_amatorka.png */,
@@ -949,6 +952,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21877F0E20B54B4B0091C2A2 /* brannanScreen.png in Resources */,
+				22E2623F20B70F2F005F2960 /* manson1.png in Resources */,
 				21B6611A20B4037700AD2D53 /* overlayMap.png in Resources */,
 				21877EC920B539860091C2A2 /* inkwellMap.png in Resources */,
 				21877EBB20B5356B0091C2A2 /* waldenMap.png in Resources */,
